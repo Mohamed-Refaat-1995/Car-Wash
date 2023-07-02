@@ -1,0 +1,134 @@
+﻿
+@{
+    ViewData["Title"] = "Order";
+}
+<section id="hero">
+    <div class="hero-container">
+        <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+            <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+            <div class="carousel-inner" role="listbox">
+
+                <!-- Slide 1 -->
+                <div class="carousel-item active" style="background-image: url(assets/img/slide/car7.jpg); background-size: cover; ">
+                    <div class="carousel-container">
+                        <div class="carousel-content">
+                            <h2 class="animate__animated animate__fadeInDown">مرحبا بك <span>موقعنا</span></h2>
+                            <p class="animate__animated animate__fadeInUp fw-bold">Start selling with shopin today Try shopin for free, and explore all the tools and services you need to start, run, and grow your business.</p>
+                            <a href="" class="btn-get-started animate__animated animate__fadeInUp">تفاصيل</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="carousel-item" style="background-image: url(assets/img/slide/car2.jpg);  background-size: cover;">
+                    <div class="carousel-container">
+                        <div class="carousel-content">
+                            <h2 class="animate__animated fanimate__adeInDown">موقعنا  <span>X</span>  الجديد </h2>
+                            <p class="animate__animated animate__fadeInUp fw-bold">
+                                Make way for fun,
+                                put-together styles that’ll take you everywhere this holiday season.
+                            </p>
+                            <a href="" class="btn-get-started animate__animated animate__fadeInUp">تفاصيل</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="carousel-item" style="background-image: url(assets/img/slide/car1.jpg);  background-size: cover;">
+                    <div class="carousel-container">
+                        <div class="carousel-content">
+                            <h2 class="animate__animated animate__fadeInDown">مرحبا بك<span> الموقع</span></h2>
+                            <p class="animate__animated animate__fadeInUp fw-bold">
+                                ’Tis the season… For vacays, getaways and celebrating
+                                under the sun… our latest edit proves the holidays are a vibe,
+                                not a weather forecast.
+                            </p>
+                            <a href="" class="btn-get-started animate__animated animate__fadeInUp"> تفاصيل</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+            </a>
+
+            <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+            </a>
+
+        </div>
+    </div>
+</section>
+
+<main id="main">
+    <!-- ======= Featured Section ======= -->
+    <section id="featured" class="featured">
+        <div class="container">
+
+            <form>
+                <!-- Name input -->
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="form5Example1">المدينة:</label>
+                    <input type="text" id="form5Example1" class="form-control" />
+
+                </div>
+
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="form5Example2">الحي:</label>
+                    <input type="email" id="form5Example2" class="form-control" />
+                </div>
+
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="form5Example2">الجوال:</label>
+                    <input type="tel" required="1" id="form5Example2" class="form-control" aria-invalid placeholder="05_ _ _ _ _ _ _ _" data-mask="05________" dir="ltr" />
+                </div>
+
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="form5Example2">الخدمة:</label>
+                    <input type="email" id="form5Example2" class="form-control" />
+                </div>
+
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-primary btn-block mb-4" style="width: 100%;">ارسال</button>
+                <!-- <a class="btn btn-info-gradiant btn-md btn-rounded border-0 text-white" href="#f40"><span>أضغط هنا</span></a> -->
+            </form>
+        </div>
+    </section>
+
+    <!-- End Featured Section -->
+    <!-- ======= Clients Section ======= -->
+    <section id="clients" class="clients">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Clients</h2>
+                <p>
+                    Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
+                    consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit
+                    in iste officiis commodi quidem hic quas.
+                </p>
+            </div>
+
+            <div class="clients-slider swiper">
+                <div class="swiper-wrapper align-items-center">
+                    <div class="swiper-slide"><img src="assets/img/clients/client-1.png" class="img-fluid" alt=""></div>
+                    <div class="swiper-slide"><img src="assets/img/clients/client-2.png" class="img-fluid" alt=""></div>
+                    <div class="swiper-slide"><img src="assets/img/clients/client-3.png" class="img-fluid" alt=""></div>
+                    <div class="swiper-slide"><img src="assets/img/clients/client-4.png" class="img-fluid" alt=""></div>
+                    <div class="swiper-slide"><img src="assets/img/clients/client-5.png" class="img-fluid" alt=""></div>
+                    <div class="swiper-slide"><img src="assets/img/clients/client-6.png" class="img-fluid" alt=""></div>
+                    <div class="swiper-slide"><img src="assets/img/clients/client-7.png" class="img-fluid" alt=""></div>
+                    <div class="swiper-slide"><img src="assets/img/clients/client-8.png" class="img-fluid" alt=""></div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+
+        </div>
+    </section><!-- End Clients Section -->
+
+</main>

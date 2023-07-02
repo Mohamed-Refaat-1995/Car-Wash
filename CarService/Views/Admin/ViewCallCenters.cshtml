@@ -1,0 +1,34 @@
+﻿@model List<CallCenter>
+@{
+    ViewData["Title"] = "ViewCallCenters";
+}
+
+<h1>ViewCallCenters</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">User Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">City</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            @foreach (var callcenters in Model)
+            {
+                <td>@callcenters.User.FirstName</td>
+                <td>@callcenters.User.LastName</td>
+                <td>@callcenters.User.UserName</td>
+                <td>@callcenters.User.Address</td>
+                <td>@callcenters.City.Name</td>
+            }
+        </tr>
+
+    </tbody>
+</table>
+
+

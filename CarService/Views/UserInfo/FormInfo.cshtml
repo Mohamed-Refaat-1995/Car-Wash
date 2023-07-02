@@ -1,0 +1,287 @@
+﻿@model PreRequestVM
+
+@{
+    ViewData["Title"] = "Make An Order";
+    Layout = "_NewLayout";
+}
+@{#region old view}
+@*@*<section id="hero">
+    <div class="hero-container">
+        <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+            <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+            <div class="carousel-inner" role="listbox">
+
+                <!-- Slide 1 -->
+                <div class="carousel-item active" style="background-image: url(/assets/img/slide/car1.jpg); background-size: cover; ">
+
+                    <div class="carousel-container">
+
+                        <div class="carousel-content">
+                            <a href="https://naqiwash.com/" title="نقي ووش - غسيل وتلميع سيارات متنقل" rel="home">
+                                <img style="width: 100px ;height: 100px;" src="https://naqiwash.com/wp-content/uploads/2021/11/Untitled-1-copy-1024x1024.png" class="header_logo header-logo" alt="نقي ووش" />
+                            </a>
+                            <h2 class="animate_animated animate_fadeInDown"> مرحبا بك في<span>  نقي ووش   </span></h2>
+
+                            <p class="animate_animated animate_fadeInUp fw-bold">نحن نضمن لكم الحصول على خدمة ذات جودة عالية ودقة متناهية، وذلك بفضل خبرتنا الواسعة في مجال غسل وتلميع السيارات، واستخدامنا لأحدث المعدات والتقنيات العالمية لتلبية احتياجاتكم بأفضل الطرق الممكنة</p>
+                            <a href="https://naqiwash.com/" class="btn-get-started animate_animated animate_fadeInUp">تفاصيل</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="carousel-item" style="background-image: url(/assets/img/slide/coo1.jpg);  background-size: cover;">
+
+                    <div class="carousel-container">
+                        <div class="carousel-content">
+                            <a href="https://naqiwash.com/" title="نقي ووش - غسيل وتلميع سيارات متنقل" rel="home">
+                                <img style="width: 100px ;height: 100px;" src="https://naqiwash.com/wp-content/uploads/2021/11/Untitled-1-copy-1024x1024.png" class="header_logo header-logo" alt="نقي ووش" />
+                            </a>
+                            <h2 class="animate_animated animate_fadeInDown">تنسيق <span>متقن</span></h2>
+                            <p class="animate_animated animate_fadeInUp fw-bold">  شركتنا تتولى توصيلكم بفنيي الغسيل الماهرين الذين يضمنون لكم النظافة الكاملة والتفاصيل الدقيقة للسيارة، فنحن نجعل من عملية الغسيل والتلميع تجربة لا تنسى، وذلك بفضل احترافية فنيينا ودقة تنسيقنا</p>
+                            <a href="https://naqiwash.com/" class="btn-get-started animate_animated animate_fadeInUp">تفاصيل</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="carousel-item" style="background-image: url(/assets/img/slide/car7.jpg);  background-size: cover;">
+
+                    <div class="carousel-container">
+                        <div class="carousel-content">
+                            <a href="https://naqiwash.com/" title="نقي ووش - غسيل وتلميع سيارات متنقل" rel="home">
+                                <img style="width: 100px ;height: 100px;" src="https://naqiwash.com/wp-content/uploads/2021/11/Untitled-1-copy-1024x1024.png" class="header_logo header-logo" alt="نقي ووش" />
+                            </a>
+                            <h2 class="animate_animated fanimate_adeInDown">تفاصيل <span>سيارتك</span>  تهمنا </h2>
+                            <p class="animate_animated animate_fadeInUp fw-bold">.نحن نضمن لكم الحصول على خدمة فريدة ومميزة، وذلك بفضل جهود فريق الفني المتميز والمدرب على أعلى مستوى، والذي يعمل دائمًا على تلبية احتياجاتكم بكل دقة واحترافية</p>
+                            <a href="https://naqiwash.com/" class="btn-get-started animate_animated animate_fadeInUp"> تفاصيل</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+      
+
+        </div>
+    </div>
+</section>
+
+
+
+
+<main id="main">
+    <!-- ======= Featured Section ======= -->
+    <section id="featured" class="featured">
+        <div class="container">
+
+            <p class="animate_animated animate_fadeInUp fw-bold">سجل جوالك وبنتصل عليك:</p>
+            <hr />
+
+            <form asp-action="FormInfo">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+              
+                <div class="form-group mb-4">
+                    <label class="animate_animated animate_fadeInUp fw-bold">المدينه</label>
+                    
+                    <select asp-for="CityId" id="CityId" class="form-control" required>
+                        <option selected>اختر المدينه </option>
+                        @foreach (City cityItem in ViewBag.Cities)
+                        {
+                            <option value="@cityItem.Id">@cityItem.Name</option>
+                        }
+                    </select>
+
+                    <span asp-validation-for="CityId" class="text-danger"></span>
+                </div>
+           
+
+                <div class="form-group">
+                    <label asp-for="Destrict" class="animate_animated animate_fadeInUp fw-bold">الحي:</label>
+                    <input asp-for="Destrict" class="form-control" required />
+                    <span asp-validation-for="Destrict" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="form-group">
+                    <label class="animate_animated animate_fadeInUp fw-bold" for="form5Example2" dir="rtl">الخدمة:</label>
+                    <select class="form-select" aria-label="Default select example" asp-for="ServiceId" required>
+                        <option> اختر الخدمة</option>
+                        @foreach (var services in ViewBag.Services)
+                        {
+                            <option value="@services.Id">@services.Name</option>
+                            @*<option value="تلميع داخلي متنقل"> تلميع داخلي متنقل</option>
+                        }
+                    </select>
+                    
+                 
+                </div>
+                <br />
+                <div class="form-group">
+                    <label asp-for="PhoneNumber" class="animate_animated animate_fadeInUp fw-bold"> الجوال </label>
+                    <input asp-for="PhoneNumber" class="form-control" placeholder="05_ _ _ _ _ _ _ _" data-mask="05________" dir="ltr" value="05" required />
+                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block mb-4" style="width: 100%;    background-color: #30a1ce; font-size:100%;">ارسال</button>
+                </div>
+               
+            </form>
+        </div>
+       
+
+
+    </section>
+
+    <!-- End Featured Section -->
+    <!-- ======= Clients Section ======= -->
+
+            <section id="clients" class="clients">
+                <div class="container">
+
+                    <div class="section-title">
+                        <h2>Clients</h2>
+                        <p class="animate_animated animate_fadeInUp fw-bold">نحن نضمن لكم الحصول على خدمة ذات جودة عالية ودقة متناهية، وذلك بفضل خبرتنا الواسعة في مجال غسل وتلميع السيارات، واستخدامنا لأحدث المعدات والتقنيات العالمية لتلبية احتياجاتكم بأفضل الطرق الممكنة</p>
+
+                    </div>
+
+                    <div class="clients-slider swiper">
+                        <div class="swiper-wrapper align-items-center">
+                            <div class="swiper-slide"><img src="/assets/img/clients/m.jpeg" class="img-fluid " alt=""></div>
+                            <div class="swiper-slide"><img src="/assets/img/clients/c1.jpeg" class="img-fluid rounded-circle" alt=""></div>
+                            <div class="swiper-slide"><img src="/assets/img/clients/c2.png" class="img-fluid rounded-circle" alt=""></div>
+                            <div class="swiper-slide"><img src="/assets/img/clients/c3.jpeg" class="img-fluid rounded-circle" alt=""></div>
+                            <div class="swiper-slide"><img src="/assets/img/clients/c5.jpeg" class="img-fluid rounded-circle" alt=""></div>
+                            <div class="swiper-slide"><img src="/assets/img/clients/c4.jpeg" class="img-fluid rounded-circle" alt=""></div>
+                            <div class="swiper-slide"><img src="/assets/img/clients/c6.png" class="img-fluid  rounded-circle" alt=""></div>
+                            <div class="swiper-slide"><img src="/assets/img/clients/c7.jpeg" class="img-fluid  rounded-circle" alt=""></div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+
+                </div>
+            </section>
+
+</main>
+@section Scripts{
+
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script>
+        $(document).ready(function () {
+            $('form').submit(function (e) {
+                if ($(this).valid()) {
+                    e.preventDefault();
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'تم ارسال الطلب بنجاح',
+                        showConfirmButton: false,
+                        timer: 2000,
+                        animation: true,
+                        customClass: {
+                            popup: 'animated bounceInDown'
+                        }
+                    });
+                    $(this).unbind('submit').submit();
+                }
+            });
+        });
+    </script>
+
+*@
+@{#endregion}
+@{#region new view}
+
+
+        <main style="margin-top: 110px;">
+            <section id="featured mb-5" class="featured">
+                <div class="container" dir="rtl">
+        
+                    <p class="animate_animated animate_fadeInUp fw-bold">سجل جوالك وبنتصل عليك:</p>
+                    <hr />
+        
+                    <form asp-action="FormInfo">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                      
+                        <div class="form-group mb-4">
+                            <label class="animate_animated animate_fadeInUp fw-bold">المدينه</label>
+                            
+                            <select asp-for="CityId" id="CityId" class="form-control" required>
+                                <option selected>اختر المدينه </option>
+                                @foreach (City cityItem in ViewBag.Cities)
+                                {
+                                    <option value="@cityItem.Id">@cityItem.Name</option>
+                                }
+                            </select>
+        
+                            <span asp-validation-for="CityId" class="text-danger"></span>
+                        </div>
+                   
+        
+                        <div class="form-group">
+                            <label asp-for="Destrict" class="animate_animated animate_fadeInUp fw-bold">الحي:</label>
+                            <input asp-for="Destrict" class="form-control" required />
+                            <span asp-validation-for="Destrict" class="text-danger"></span>
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <label class="animate_animated animate_fadeInUp fw-bold" for="form5Example2" dir="rtl">الخدمة:</label>
+                            <select class="form-select" aria-label="Default select example" asp-for="ServiceId" required>
+                                <option> اختر الخدمة</option>
+                                @foreach (var services in ViewBag.Services)
+                                {
+                                    <option value="@services.Id">@services.Name</option>
+                                    @*<option value="تلميع داخلي متنقل"> تلميع داخلي متنقل</option>*@
+                                }
+                            </select>
+                            
+                         
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <label asp-for="PhoneNumber" class="animate_animated animate_fadeInUp fw-bold"> الجوال </label>
+                            <input asp-for="PhoneNumber" class="form-control" placeholder="05_ _ _ _ _ _ _ _" data-mask="05________" dir="ltr" value="05" required />
+                            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block mb-4" style="width: 100%;    background-color: #30a1ce; font-size:100%;">ارسال</button>
+                        </div>
+                       
+                    </form>
+                </div>
+               
+        
+        
+            </section>
+        </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@{#endregion}
+

@@ -1,0 +1,670 @@
+﻿
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "_NewLayout";
+}
+
+@{#region Old View}
+@*<section id="hero">
+    <div class="hero-container">
+        <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+            <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+            <div class="carousel-inner" role="listbox">
+
+                <!-- Slide 1 -->
+                <div class="carousel-item active" style="background-image: url(assets/img/slide/car1.jpg); background-size: cover; ">
+
+                    <div class="carousel-container">
+
+                        <div class="carousel-content">
+                            <a href="https://naqiwash.com/" title="نقي ووش - غسيل وتلميع سيارات متنقل" rel="home">
+                                <img style="width: 100px ;height: 100px;" src="https://naqiwash.com/wp-content/uploads/2021/11/Untitled-1-copy-1024x1024.png" class="header_logo header-logo" alt="نقي ووش" />
+                            </a>
+                            <h2 class="animate_animated animate_fadeInDown"> مرحبا بك في<span>  نقي ووش   </span></h2>
+
+                            <p class="animate_animated animate_fadeInUp fw-bold">نحن نضمن لكم الحصول على خدمة ذات جودة عالية ودقة متناهية، وذلك بفضل خبرتنا الواسعة في مجال غسل وتلميع السيارات، واستخدامنا لأحدث المعدات والتقنيات العالمية لتلبية احتياجاتكم بأفضل الطرق الممكنة</p>
+                            <a href="https://naqiwash.com/" class="btn-get-started animate_animated animate_fadeInUp">تفاصيل</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="carousel-item" style="background-image: url(/assets/img/slide/coo1.jpg);  background-size: cover;">
+
+                    <div class="carousel-container">
+                        <div class="carousel-content">
+                            <a href="https://naqiwash.com/" title="نقي ووش - غسيل وتلميع سيارات متنقل" rel="home">
+                                <img style="width: 100px ;height: 100px;" src="https://naqiwash.com/wp-content/uploads/2021/11/Untitled-1-copy-1024x1024.png" class="header_logo header-logo" alt="نقي ووش" />
+                            </a>
+                            <h2 class="animate_animated animate_fadeInDown">تنسيق <span>متقن</span></h2>
+                            <p class="animate_animated animate_fadeInUp fw-bold">  شركتنا تتولى توصيلكم بفنيي الغسيل الماهرين الذين يضمنون لكم النظافة الكاملة والتفاصيل الدقيقة للسيارة، فنحن نجعل من عملية الغسيل والتلميع تجربة لا تنسى، وذلك بفضل احترافية فنيينا ودقة تنسيقنا</p>
+                            <a href="https://naqiwash.com/" class="btn-get-started animate_animated animate_fadeInUp">تفاصيل</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="carousel-item" style="background-image: url(/assets/img/slide/car7.jpg);  background-size: cover;">
+
+                    <div class="carousel-container">
+                        <div class="carousel-content">
+                            <a href="https://naqiwash.com/" title="نقي ووش - غسيل وتلميع سيارات متنقل" rel="home">
+                                <img style="width: 100px ;height: 100px;" src="https://naqiwash.com/wp-content/uploads/2021/11/Untitled-1-copy-1024x1024.png" class="header_logo header-logo" alt="نقي ووش" />
+                            </a>
+                            <h2 class="animate_animated fanimate_adeInDown">تفاصيل <span>سيارتك</span>  تهمنا </h2>
+                            <p class="animate_animated animate_fadeInUp fw-bold">.نحن نضمن لكم الحصول على خدمة فريدة ومميزة، وذلك بفضل جهود فريق الفني المتميز والمدرب على أعلى مستوى، والذي يعمل دائمًا على تلبية احتياجاتكم بكل دقة واحترافية</p>
+                            <a href="https://naqiwash.com/" class="btn-get-started animate_animated animate_fadeInUp"> تفاصيل</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+     @*       <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+            </a>
+
+            <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+            </a>
+
+        </div>
+    </div>
+</section>
+
+<main id="main">
+    <!-- ======= Featured Section ======= -->
+    <section id="featured" class="featured">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="icon-box">
+                        <i class="bi bi-card-checklist"></i>
+                        <h3><a href="account/CallCenterRegistration"> قسم التواصل</a></h3>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="icon-box">
+                        <i class="bi bi-bar-chart"></i>
+                        <h3><a href="account/CoordinatorRegistration">قسم التنسيق</a></h3>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="row" style="padding-top: 3%;">
+                <div class="col-lg-6">
+                    <div class="icon-box">
+                        <i class="bi bi-card-checklist"></i>
+                        <h3><a href=""> قسم الجوده</a></h3>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="icon-box">
+                        <i class="bi bi-binoculars"></i>
+                        <h3><a href="account/TechnicanRegistration">القسم الفني</a></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--
+                  <div class="row" >
+                    <div class="d-flex justify-content-center align-items-center" style="height: 50vh;">
+                      <div class="col-lg-4 mt-4 mt-lg-0">
+                        <div class="icon-box">
+                          <i class="bi bi-card-checklist"></i>
+                          <h3><a href=""> قسم الجوده</a></h3>
+                          <p>Our collections are inspired by nature and the textures, colours and hand-drawn elements tell the unique story about who we are.</p>
+                        </div>
+                      </div>
+                    </div>
+               -->
+    </section>
+    <!-- End Featured Section -->
+</main>
+<!-- End #main -->
+*@
+@{#endregion}
+
+@{#region New View}
+<main>
+
+    <section class="hero-section hero-section-full-height d-flex justify-content-center align-items-center">
+        <div class="section-overlay"></div>
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-7 col-12 text-center mx-auto">
+                    <h1 class="cd-headline rotate-1 text-white mb-4 pb-2">
+                        <span class="cd-words-wrapper">
+                        <span class="ms-1">خدماتنا تشمل</span>
+                            <b>الصيانة </b>
+                            <b>المتابعة </b>
+                            <b class="is-visible">التنظيف</b>
+                        </span>
+                    </h1>
+
+                    <a class="custom-btn btn button  smoothscroll me-3" href="#intro-section" id="myIntro" style="#myIntro:hover{color:black}" >
+                        <span>نبــذة عن الشركة</span>
+
+                        <div class="marquee" aria-hidden="true">
+                            <div class="marquee__inner">
+                                <span>نبــذة عن الشركة</span>
+                                <span>نبــذة عن الشركة</span>
+                                <span>نبــذة عن الشركة</span>
+                                <span>نبــذة عن الشركة</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a class="custom-btn custom-border-btn custom-btn-bg-white btn button button--pan smoothscroll" href="#services-section">
+                        <span>...خـدمـاتـنا  </span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+       
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,224L40,229.3C80,235,160,245,240,250.7C320,256,400,256,480,240C560,224,640,192,720,176C800,160,880,160,960,138.7C1040,117,1120,75,1200,80C1280,85,1360,139,1400,165.3L1440,192L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
+        <div class="backstretch" style="left: 0px; top: 0px; overflow: hidden; margin: 0px; padding: 0px; height: 680px; width: 1349px; z-index: -999998; position: absolute;"><img style="position: absolute; margin: 0px; padding: 0px; border: none; width: 1349px; height: 900.233px; max-height: none; max-width: none; z-index: -999999; left: 0px; top: -110.116px;" src="assets/images/slideshow/afro-woman-cleaning-window-with-rag-home.jpg"></div>
+    </section>
+
+
+    <section class="intro-section" id="intro-section">
+        <div class="container">
+            <div class="row justify-content-lg-center align-items-center">
+
+                <div class="col-lg-6 col-12">
+                    <h2 class="mb-4" id="intro-header">المصـداقـية و سـرعـة التـنفيذ <br> فى تنـفـيذ خدماتنا</h2>
+
+
+
+
+
+                    <p id="intro-tag"><a href="">نقى ووش</a></p>
+
+
+                    <p id="intro">
+                        نقي ووش أحد الشركات التابعة لنقي، تأسست عام 2020م لتكون رائدة في تقديم خدمات تلميع وغسيل السيارات المتنقل على مستوى المملكة العربية السعودية ومنها إلى الخليج والعالم.
+
+                        تسعى نقي ووش لتقديم تجربة وجودة خدمات احترافية بحلول مبتكرة، بدأت العلامة التجارية عملياتها من الرياض.
+
+                        تعمل نقي ووش باستمرار على ابتكار وتوفير حلول مبتكرة لنقل مستوى خدمة تلميع وغسيل السيارات المتنقلة إلى مستوى عالمي، لتكون نقي ووش الخيار الأول للعميل
+                    </p>
+
+                </div>
+                <div class="col-lg-6 col-12 custom-block-wrap">
+                    <img src="~/assets/images/male-wearing-apron-female-white-t-shirt-smiling-broadly-being-glad-clean.png" class="img-fluid">
+                    <div class="custom-block d-flex flex-column">
+                        <h6 class="text-white mb-3">هل تحتـاج للـمساعدة <br> من فضلك أتـصـل بـنـا</h6>
+
+                        <p class="d-flex mb-0">
+
+                        <img  src="~/assets/images/whatsapp.png" width="25px" height="25px" style="display:inline" class="ps-2"/>
+                            <a href="tel:01024051456">
+                                &#1638; &#1637; &#1636;   &#1633; &#1637; &#1632; &#1636;  &#1634;  &#1632; &#1633; &#1632;
+                            </a>                                  
+                        </p>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="services-section section-padding section-bg" id="services-section">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-12 col-12" id="offers">
+                    <h2 class="mb-4">يـمـكـنك  مـشاهدة أفـضل عروضـنـا  </h2>
+                </div>
+
+                <div class="col-lg-6 col-12">
+                    <div class="services-thumb">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="services-image-wrap">
+                                    <a href="#">
+                                        <img src="~/assets/images/private car wash/pexels-photo-4870700.jpeg" class="services-image img-fluid" alt="">
+                                        <img src="~/assets/images/private car wash/pexels-photo-4870727.jpeg" class="services-image services-image-hover img-fluid" alt="">
+
+                                        <div class="services-icon-wrap">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <p class="text-white mb-0">
+
+                                                    &#1632;  &#1634; &#1640;
+                                                    ريال
+                                                    <img src="~/assets/images/dollar.png" width="20px" height="20px" style="display:inline" class="ps-2" />
+                                                </p>
+
+                                                <p class="text-white mb-0">
+                                                    &#1637;
+                                                    ساعات
+                                                    <img src="~/assets/images/hour.png" width="20px" height="20px" style="display:inline" class="ps-2" />
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-12 d-flex align-items-center">
+                                <div class="services-info mt-4 mt-lg-0 mt-md-0">
+                                    <h4 class="services-title mb-1 mb-lg-2">
+                                        <a class="services-title-link" href="#">غسيل سـيارة خاصة(ملاكى</a>
+                                    </h4>
+
+                                    <p class="align-arabic-text">تـمـتع بـأفـضل خـدمـة لغسيل السيارات الخاصة  (الـملاكـى)</p>
+
+                                    <div class="d-flex flex-wrap align-items-center">
+                                        <div class="reviews-icons">
+                                            <img src="~/assets/images/full star.png" width="25px" height="25px" style="display:inline" class="ps-2" />
+                                            <img src="~/assets/images/full star.png" width="25px" height="25px" style="display:inline" class="ps-2" />
+                                            <img src="~/assets/images/full star.png" width="25px" height="25px" style="display:inline" class="ps-2" />
+                                            <img src="~/assets/images/full star.png" width="25px" height="25px" style="display:inline" class="ps-2" />
+                                            <img src="~/assets/images/star.png" width="25px" height="25px" style="display:inline" class="ps-2" />
+                                        </div>
+
+                                        <a href="#" class="custom-btn btn button button--atlas mt-2 ms-auto">
+                                            <span>أعرف المزيد</span>
+
+                                            <div class="marquee" aria-hidden="true">
+                                                <div class="marquee__inner">
+                                                    <span>أعرف المزيد</span>
+                                                    <span>أعرف المزيد</span>
+                                                    <span>أعرف المزيد</span>
+                                                    <span>أعرف المزيد</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12">
+                    <div class="services-thumb">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="services-image-wrap">
+                                    <a href="#">
+                                        <img src="~/assets/images/private car fix/hands-car-mechanic-with-wrench-garage_146671-19688.jpg" class="services-image img-fluid" alt="">
+                                        <img src="~/assets/images/private car fix/hand-car-mechanic-with-wrench-auto-repair-garage_146671-13561.jpg" class="services-image services-image-hover img-fluid" alt="">
+
+                                        <div class="services-icon-wrap">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <p class="text-white mb-0">
+
+                                                    &#1632;  &#1634; &#1640;
+                                                    ريال
+                                                    <img src="~/assets/images/dollar.png" width="20px" height="20px" style="display:inline" class="ps-2" />
+                                                </p>
+
+                                                <p class="text-white mb-0">
+                                                    &#1637;
+                                                    ساعات
+                                                    <img src="~/assets/images/hour.png" width="20px" height="20px" style="display:inline" class="ps-2" />
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-12 d-flex align-items-center">
+                                <div class="services-info mt-4 mt-lg-0 mt-md-0">
+                                    <h4 class="services-title mb-1 mb-lg-2">
+                                        <a class="services-title-link" href="#">صيانة سـيارة خاصة(ملاكى</a>
+                                    </h4>
+
+                                    <p class="align-arabic-text">تـمـتع بـأفـضل خـدمـة لصيانة السيارات الخاصة  (الـملاكـى)</p>
+
+                                    <div class="d-flex flex-wrap align-items-center">
+                                        <div class="reviews-icons">
+                                            <img src="~/assets/images/full star.png" width="25px" height="25px" style="display:inline" class="ps-2" />
+                                            <img src="~/assets/images/full star.png" width="25px" height="25px" style="display:inline" class="ps-2" />
+                                            <img src="~/assets/images/full star.png" width="25px" height="25px" style="display:inline" class="ps-2" />
+                                            <img src="~/assets/images/full star.png" width="25px" height="25px" style="display:inline" class="ps-2" />
+                                            <img src="~/assets/images/star.png" width="25px" height="25px" style="display:inline" class="ps-2" />
+                                        </div>
+
+                                        <a href="#" class="custom-btn btn button button--atlas mt-2 ms-auto">
+                                            <span>أعرف المزيد</span>
+
+                                            <div class="marquee" aria-hidden="true">
+                                                <div class="marquee__inner">
+                                                    <span>أعرف المزيد</span>
+                                                    <span>أعرف المزيد</span>
+                                                    <span>أعرف المزيد</span>
+                                                    <span>أعرف المزيد</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             </div>
+            <div class="row">
+
+
+                <div class="col-lg-6 col-12">
+                    <div class="services-thumb">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="services-image-wrap">
+                                    <a href="#">
+                                        <img src="~/assets/images/heavy car fix/portrait-positive-smiling-truck-serviceman-with-tools-standing-by-truck-vehicle-workshop_342744-1330.jpg" class="services-image img-fluid" alt="">
+                                        <img src="~/assets/images/heavy car fix/vehicle-mechanics-standing-by-tools-cart-choosing-appropriate-tool-truck-service_342744-1328.jpg" class="services-image services-image-hover img-fluid" alt="">
+
+                                        <div class="services-icon-wrap">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <p class="text-white mb-0">
+
+                                                    &#1632;  &#1634; &#1640;
+                                                    ريال
+                                                    <img src="~/assets/images/dollar.png" width="20px" height="20px" style="display:inline" class="ps-2" />
+                                                </p>
+
+                                                <p class="text-white mb-0">
+                                                    &#1637;
+                                                    ساعات
+                                                    <img src="~/assets/images/hour.png" width="20px" height="20px" style="display:inline" class="ps-2" />
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-12 d-flex align-items-center">
+                                <div class="services-info mt-4 mt-lg-0 mt-md-0">
+                                    <h4 class="services-title mb-1 mb-lg-2">
+                                        <a class="services-title-link" href="#">غسيل سـيارة نقل</a>
+                                    </h4>
+
+                                    <p class="align-arabic-text">تـمـتع بـأفـضل خـدمـة لغسيل السيارات النقل  
+                                        </p>
+
+                                    <div class="d-flex flex-wrap align-items-center">
+                                        <div class="reviews-icons">
+                                            <img src="~/assets/images/full star.png" width="25px" height="25px" style="display:inline" class="ps-2" />
+                                            <img src="~/assets/images/full star.png" width="25px" height="25px" style="display:inline" class="ps-2" />
+                                            <img src="~/assets/images/full star.png" width="25px" height="25px" style="display:inline" class="ps-2" />
+                                            <img src="~/assets/images/full star.png" width="25px" height="25px" style="display:inline" class="ps-2" />
+                                            <img src="~/assets/images/star.png" width="25px" height="25px" style="display:inline" class="ps-2" />
+                                        </div>
+
+                                        <a href="#" class="custom-btn btn button button--atlas mt-2 ms-auto">
+                                            <span>أعرف المزيد</span>
+
+                                            <div class="marquee" aria-hidden="true">
+                                                <div class="marquee__inner">
+                                                    <span>أعرف المزيد</span>
+                                                    <span>أعرف المزيد</span>
+                                                    <span>أعرف المزيد</span>
+                                                    <span>أعرف المزيد</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12">
+                    <div class="services-thumb">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="services-image-wrap">
+                                    <a href="#">
+                                        <img src="~/assets/images/heavy car fix/portrait-positive-smiling-truck-serviceman-with-tools-standing-by-truck-vehicle-workshop_342744-1330.jpg" class="services-image img-fluid" alt="">
+                                        <img src="~/assets/images/heavy car fix/vehicle-mechanics-standing-by-tools-cart-choosing-appropriate-tool-truck-service_342744-1328.jpg" class="services-image services-image-hover img-fluid" alt="">
+
+                                        <div class="services-icon-wrap">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <p class="text-white mb-0">
+
+                                                    &#1632;  &#1634; &#1640;
+                                                    ريال
+                                                    <img src="~/assets/images/dollar.png" width="20px" height="20px" style="display:inline" class="ps-2" />
+                                                </p>
+
+                                                <p class="text-white mb-0">
+                                                    &#1637;
+                                                    ساعات
+                                                    <img src="~/assets/images/hour.png" width="20px" height="20px" style="display:inline" class="ps-2" />
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-12 d-flex align-items-center">
+                                <div class="services-info mt-4 mt-lg-0 mt-md-0">
+                                    <h4 class="services-title mb-1 mb-lg-2">
+                                        <a class="services-title-link" href="#">صيانة سـيارة نقل</a>
+                                    </h4>
+
+                                    <p class="align-arabic-text">تـمـتع بـأفـضل خـدمـة لصيانة سيارات النقل </p>
+
+                                    <div class="d-flex flex-wrap align-items-center">
+                                        <div class="reviews-icons">
+                                            <img src="~/assets/images/full star.png" width="25px" height="25px" style="display:inline" class="ps-2" />
+                                            <img src="~/assets/images/full star.png" width="25px" height="25px" style="display:inline" class="ps-2" />
+                                            <img src="~/assets/images/full star.png" width="25px" height="25px" style="display:inline" class="ps-2" />
+                                            <img src="~/assets/images/full star.png" width="25px" height="25px" style="display:inline" class="ps-2" />
+                                            <img src="~/assets/images/star.png" width="25px" height="25px" style="display:inline" class="ps-2" />
+                                        </div>
+
+                                        <a href="#" class="custom-btn btn button button--atlas mt-2 ms-auto">
+                                            <span>أعرف المزيد</span>
+
+                                            <div class="marquee" aria-hidden="true">
+                                                <div class="marquee__inner">
+                                                    <span>أعرف المزيد</span>
+                                                    <span>أعرف المزيد</span>
+                                                    <span>أعرف المزيد</span>
+                                                    <span>أعرف المزيد</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             </div>
+        </div>
+    </section>
+
+
+    <section class="testimonial-section section-padding section-bg">
+        <div class="section-overlay"></div>
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-12 col-12 text-center">
+                    <h2 class="text-white mb-4">عـمـلائـنـا الـسـابقون</h2>
+                </div>
+
+                <div class="col-lg-4 col-12">
+                    <div class="featured-block">
+                        <div class="d-flex align-items-center mb-3" dir="rtl">
+
+                            <img src="~/assets/images/avatar/happy-customer-01.jpg" class="avatar-image img-fluid">
+                            <div class="me-4">
+                                <h4 class="mb-0">سلمى</h4>
+
+                                <div class="reviews-icons mb-1">
+                                    <img src="~/assets/images/full star.png" width="25px" height="25px" style="display:inline" class="ps-2" />
+                                    <img src="~/assets/images/full star.png" width="25px" height="25px" style="display:inline" class="ps-2" />
+                                    <img src="~/assets/images/full star.png" width="25px" height="25px" style="display:inline" class="ps-2" />
+                                    <img src="~/assets/images/full star.png" width="25px" height="25px" style="display:inline" class="ps-2" />
+                                    <img src="~/assets/images/star.png" width="25px" height="25px" style="display:inline" class="ps-2" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="mb-0" dir="rtl">خدمة أكثر من رائعة وسعرها جيد وأسلوب التعامل راقى جداً وأرشحها إلى أي شخص يريد غسل سيارته</p>
+                    </div>
+
+                    <div class="featured-block mb-lg-0">
+                        <div class="d-flex align-items-center mb-3" dir="rtl">
+                            <img src="~/assets/images/avatar/happy-customer-02.jpg" class="avatar-image img-fluid">
+
+                            <div class="me-4">
+                                <h4 class="mb-0">منة</h4>
+
+                                <div class="reviews-icons mb-1">
+                                    <img src="~/assets/images/full star.png" width="25px" height="25px" style="display:inline" class="ps-2" />
+                                    <img src="~/assets/images/full star.png" width="25px" height="25px" style="display:inline" class="ps-2" />
+                                    <img src="~/assets/images/full star.png" width="25px" height="25px" style="display:inline" class="ps-2" />
+                                    <img src="~/assets/images/full star.png" width="25px" height="25px" style="display:inline" class="ps-2" />
+                                    <img src="~/assets/images/star.png" width="25px" height="25px" style="display:inline" class="ps-2" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="mb-0" dir="rtl">خدمة أكثر من رائعة وسعرها جيد وأسلوب التعامل راقى جداً وأرشحها إلى أي شخص يريد غسل سيارته</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-12">
+                    <div class="featured-block">
+                        <div class="d-flex align-items-center mb-3" dir="rtl">
+
+                            <img src="~/assets/images/avatar/happy-customer-03.jpg" class="avatar-image img-fluid">
+                            <div class="me-4">
+                                <h4 class="mb-0"> أحمد</h4>
+
+                                <div class="reviews-icons mb-1">
+                                            <img src="~/assets/images/full star.png" width="25px" height="25px" style="display:inline" class="ps-2" />
+                                            <img src="~/assets/images/full star.png" width="25px" height="25px" style="display:inline" class="ps-2" />
+                                            <img src="~/assets/images/full star.png" width="25px" height="25px" style="display:inline" class="ps-2" />
+                                            <img src="~/assets/images/full star.png" width="25px" height="25px" style="display:inline" class="ps-2" />
+                                            <img src="~/assets/images/star.png" width="25px" height="25px" style="display:inline" class="ps-2" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="mb-0" dir="rtl">خدمة أكثر من رائعة وسعرها جيد وأسلوب التعامل راقى جداً وأرشحها إلى أي شخص يريد غسل سيارته</p>
+                    </div>
+
+                    <div class="featured-block mb-lg-0">
+                        <div class="d-flex align-items-center mb-3" dir="rtl">
+                            <img src="~/assets/images/avatar/happy-customer-04.jpg" class="avatar-image img-fluid">
+
+                            <div class="me-4">
+                                <h4 class="mb-0">محمد</h4>
+
+                                <div class="reviews-icons mb-1">
+                                    <img src="~/assets/images/full star.png" width="25px" height="25px" style="display:inline" class="ps-2" />
+                                    <img src="~/assets/images/full star.png" width="25px" height="25px" style="display:inline" class="ps-2" />
+                                    <img src="~/assets/images/full star.png" width="25px" height="25px" style="display:inline" class="ps-2" />
+                                    <img src="~/assets/images/full star.png" width="25px" height="25px" style="display:inline" class="ps-2" />
+                                    <img src="~/assets/images/star.png" width="25px" height="25px" style="display:inline" class="ps-2" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="mb-0" dir="rtl">خدمة أكثر من رائعة وسعرها جيد وأسلوب التعامل راقى جداً وأرشحها إلى أي شخص يريد غسل سيارته</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-12">
+                    <div class="featured-block">
+                        <div class="d-flex align-items-center mb-3" dir="rtl">
+
+                            <img src="~/assets/images/avatar/happy-customer-05.jpg" class="avatar-image img-fluid">
+                            <div class="me-4">
+                                <h4 class="mb-0">ريهام</h4>
+
+                                <div class="reviews-icons mb-1">
+                                    <img src="~/assets/images/full star.png" width="25px" height="25px" style="display:inline" class="ps-2" />
+                                    <img src="~/assets/images/full star.png" width="25px" height="25px" style="display:inline" class="ps-2" />
+                                    <img src="~/assets/images/full star.png" width="25px" height="25px" style="display:inline" class="ps-2" />
+                                    <img src="~/assets/images/full star.png" width="25px" height="25px" style="display:inline" class="ps-2" />
+                                    <img src="~/assets/images/star.png" width="25px" height="25px" style="display:inline" class="ps-2" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="mb-0" dir="rtl">خدمة أكثر من رائعة وسعرها جيد وأسلوب التعامل راقى جداً وأرشحها إلى أي شخص يريد غسل سيارته</p>
+                    </div>
+
+                    <div class="featured-block mb-lg-0">
+                        <div class="d-flex align-items-center mb-3" dir="rtl">
+                            <img src="~/assets/images/avatar/happy-customer-06.jpg" class="avatar-image img-fluid">
+
+                            <div class="me-4">
+                                <h4 class="mb-0">عبد الله</h4>
+
+                                <div class="reviews-icons mb-1">
+                                    <img src="~/assets/images/full star.png" width="25px" height="25px" style="display:inline" class="ps-2" />
+                                    <img src="~/assets/images/full star.png" width="25px" height="25px" style="display:inline" class="ps-2" />
+                                    <img src="~/assets/images/full star.png" width="25px" height="25px" style="display:inline" class="ps-2" />
+                                    <img src="~/assets/images/full star.png" width="25px" height="25px" style="display:inline" class="ps-2" />
+                                    <img src="~/assets/images/star.png" width="25px" height="25px" style="display:inline" class="ps-2" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="mb-0" dir="rtl">خدمة أكثر من رائعة وسعرها جيد وأسلوب التعامل راقى جداً وأرشحها إلى أي شخص يريد غسل سيارته</p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="partners-section">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+
+                <div class="col-lg-12 col-12">
+                    <h4 class="partners-section-title bg-white shadow-lg " id="supportedCpmpanies">معـتمدة من خـلال الـشركات </h4>
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-6">
+                    <img src="~/assets/images/partners/toprak-leasing.svg" class="partners-image img-fluid">
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-6">
+                    <img src="~/assets/images/partners/glorix.svg" class="partners-image img-fluid">
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-6">
+                    <img src="~/assets/images/partners/woocommerce.svg" class="partners-image img-fluid">
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-6">
+                    <img src="~/assets/images/partners/rolf-leasing.svg" class="partners-image img-fluid">
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-6">
+                    <img src="~/assets/images/partners/unilabs.svg" class="partners-image img-fluid">
+                </div>
+
+            </div>
+        </div>
+    </section>
+</main>
+
+@{#endregion}

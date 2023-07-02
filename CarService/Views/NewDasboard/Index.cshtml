@@ -1,0 +1,531 @@
+﻿@{
+    Layout = "_Dashboard";
+}
+<div class="main-content">
+
+    <div class="row">
+
+        <!-- Profile Info and Notifications -->
+        <div class="col-md-6 col-sm-8 clearfix">
+
+            <ul class="user-info pull-left pull-none-xsm">
+
+
+                <ul class="user-info pull-left pull-right-xs pull-none-xsm">
+
+                    <!-- Raw Notifications -->
+                    <li class="notifications dropdown">
+
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                            <i class="entypo-attention"></i>
+                            <span class="badge badge-info">6</span>
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li class="top">
+                                <p class="small">
+                                    <a href="#" class="pull-right">Mark all Read</a>
+                                    You have <strong>3</strong> new notifications.
+                                </p>
+                            </li>
+
+                            <li>
+                                <ul class="dropdown-menu-list scroller">
+                                    <li class="unread notification-success">
+                                        <a href="#">
+                                            <i class="entypo-user-add pull-right"></i>
+
+                                            <span class="line">
+                                                <strong>New Client registered</strong>
+                                            </span>
+
+                                            <span class="line small">
+                                                30 seconds ago
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    @*<li class="unread notification-secondary">
+                                    <a href="#">
+                                    <i class="entypo-heart pull-right"></i>
+
+                                    <span class="line">
+                                    <strong>Someone special liked this</strong>
+                                    </span>
+
+                                    <span class="line small">
+                                    2 minutes ago
+                                    </span>
+                                    </a>
+                                    </li>
+
+                                    <li class="notification-primary">
+                                    <a href="#">
+                                    <i class="entypo-user pull-right"></i>
+
+                                    <span class="line">
+                                    <strong>Privacy settings have been changed</strong>
+                                    </span>
+
+                                    <span class="line small">
+                                    3 hours ago
+                                    </span>
+                                    </a>
+                                    </li>*@
+
+                                    <li class="notification-danger">
+                                        <a href="#">
+                                            <i class="entypo-cancel-circled pull-right"></i>
+
+                                            <span class="line">
+                                                John cancelled the event
+                                            </span>
+
+                                            <span class="line small">
+                                                9 hours ago
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="notification-info">
+                                        <a href="#">
+                                            <i class="entypo-info pull-right"></i>
+
+                                            <span class="line">
+                                                The server is status is stable
+                                            </span>
+
+                                            <span class="line small">
+                                                yesterday at 10:30am
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="notification-warning">
+                                        <a href="#">
+                                            <i class="entypo-rss pull-right"></i>
+
+                                            <span class="line">
+                                                New comments waiting approval
+                                            </span>
+
+                                            <span class="line small">
+                                                last week
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="external">
+                                <a href="#">View all notifications</a>
+                            </li>
+                        </ul>
+
+                    </li>
+
+                    <!-- Message Notifications -->
+                    <!-- Task Notifications -->
+                    <li class="notifications dropdown">
+
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                            <i class="entypo-list"></i>
+                            <span class="badge badge-warning">1</span>
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li class="top">
+                                <p>You have 6 pending tasks</p>
+                            </li>
+
+                            <li>
+                                <ul class="dropdown-menu-list scroller">
+                                    <li>
+                                        <a href="#">
+                                            <span class="task">
+                                                <span class="desc">Call Communication Depatment</span>
+                                                <span class="percent">27%</span>
+                                            </span>
+
+                                            <span class="progress">
+                                                <span style="width: 27%;" class="progress-bar progress-bar-success">
+                                                    <span class="sr-only">27% Complete</span>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="task">
+                                                <span class="desc">Coordinator Deapartment</span>
+                                                <span class="percent">83%</span>
+                                            </span>
+
+                                            <span class="progress progress-striped">
+                                                <span style="width: 83%;" class="progress-bar progress-bar-danger">
+                                                    <span class="sr-only">83% Complete</span>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="task">
+                                                <span class="desc">Tecnical Department</span>
+                                                <span class="percent">91%</span>
+                                            </span>
+
+                                            <span class="progress">
+                                                <span style="width: 91%;" class="progress-bar progress-bar-success">
+                                                    <span class="sr-only">91% Complete</span>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="task">
+                                                <span class="desc">Quality Department</span>
+                                                <span class="percent">12%</span>
+                                            </span>
+
+                                            <span class="progress progress-striped">
+                                                <span style="width: 12%;" class="progress-bar progress-bar-warning">
+                                                    <span class="sr-only">12% Complete</span>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+                            <li class="external">
+                                <a href="#">See all tasks</a>
+                            </li>
+                        </ul>
+
+                    </li>
+
+                </ul>
+            </ul>
+
+        </div>
+
+
+        <!-- Raw Links -->
+        <div class="col-md-6 col-sm-4 clearfix hidden-xs">
+
+            <ul class="list-inline links-list pull-right">
+
+                <!-- Language Selector -->
+                <li class="dropdown language-selector">
+
+                    Language: &nbsp;
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-close-others="true">
+                        <img src="~/assets/images/flags/flag-uk.png" width="16" height="16" />
+                    </a>
+
+                    <ul class="dropdown-menu pull-right">
+                        <li>
+                            <a href="#">
+                                <img src="~/assets/images/flags/flag-de.png" width="16" height="16" />
+                                <span>Deutsch</span>
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a href="#">
+                                <img src="~/assets/images/flags/flag-uk.png" width="16" height="16" />
+                                <span>English</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="~/assets/images/flags/flag-fr.png" width="16" height="16" />
+                                <span>François</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="~/assets/images/flags/flag-al.png" width="16" height="16" />
+                                <span>Shqip</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="~/assets/images/flags/flag-es.png" width="16" height="16" />
+                                <span>Español</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                </li>
+
+                @*<li class="sep"></li>
+
+
+                <li>
+                <a href="#" data-toggle="chat" data-collapse-sidebar="1">
+                <i class="entypo-chat"></i>
+                Chat
+
+                <span class="badge badge-success chat-notifications-badge is-hidden">0</span>
+                </a>
+                </li>
+
+                <li class="sep"></li>
+
+                <li>*@
+                <a href="extra-login.html">
+                    Log Out <i class="entypo-logout right"></i>
+                </a>
+                </li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <hr />
+
+
+
+
+
+    <div class="row">
+        <div class="col-sm-3 col-xs-6">
+
+            <div class="tile-stats tile-blue">
+                <div class="icon"><i class="entypo-users"></i></div>
+                <div class="num" data-start="0" data-end="@ViewBag.numberOfPreReq" data-postfix="" data-duration="1500" data-delay="0">0</div>
+
+                <h3>Registered Client Requested</h3>
+                <p>Total no registered client in system.</p>
+            </div>
+
+        </div>
+
+        <div class="col-sm-3 col-xs-6">
+
+            <div class="tile-stats tile-green">
+                <div class="icon"><i class="entypo-calendar"></i></div>
+                <div class="num" data-start="0" data-end="@ViewBag.numberOfCompletedReq" data-postfix="" data-duration="1500" data-delay="600">0</div>
+
+                <h3>Completed Client Request</h3>
+                <p>Number of Completed Request</p>
+            </div>
+
+        </div>
+
+        <div class="clear visible-xs"></div>
+
+        <div class="col-sm-3 col-xs-6">
+
+            <div class="tile-stats tile-brown">
+                <div class="icon"><i class="entypo-back-in-time"></i></div>
+                <div class="num" data-start="0" data-end="@ViewBag.PendingClients" data-postfix="" data-duration="1500" data-delay="1200">0</div>
+
+                <h3>Pending clients</h3>
+                <br />
+                <p>Number of Pending Req</p>
+            </div>
+
+        </div>
+
+        <div class="col-sm-3 col-xs-6">
+
+            <div class="tile-stats tile-red">
+                <div class="icon"><i class="entypo-cancel-circled"></i></div>
+                <div class="num" data-start="0" data-end="@ViewBag.numOfCanceldPreReq" data-postfix="" data-duration="1500" data-delay="1800">0</div>
+
+                <h3>No Response</h3>
+                <br />
+                <p>Number of canceled client Request</p>
+            </div>
+
+        </div>
+    </div>
+
+    <br />
+
+
+    <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-12">
+
+            <div class="panel panel-gradient" data-collapsed="0">
+
+                <!-- panel head -->
+                <div class="panel-heading">
+                    <div class="panel-title">Cities</div>
+
+                    <div class="panel-options">
+                        <a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-1" class="bg"><i class="entypo-cog"></i></a>
+                        <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
+                        <a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a>
+                        <a href="#" data-rel="close"><i class="entypo-cancel"></i></a>
+                    </div>
+                </div>
+
+                <!-- panel body -->
+                <div class="panel-body">
+                    <div class="">
+                        <div class="pmd-card-body statistics text-center">
+                            <ul class="list-group list-inline">
+
+                                @foreach (City city in ViewBag.Cities)
+                                {
+                                    <li style="width: 33%;">
+                                        <a href="/Cities/index/@city.Id" class="link">
+                                            <div class="statistic-img-circle active" style="border-color:#0B6F77">
+                                                <i class="entypo-location" style="margin-top: 10px; color: #31708f;zoom:350%"></i>
+                                                @*<i class="material-icons lg-dark pmd-lg" style="margin-top: 10px; color: #31708f">phone</i>*@
+                                            </div>
+                                            <div class="source-semibold typo-fill-secondary active">@city.Name</div>
+                                        </a>
+                                    </li>
+
+                                }
+
+
+                            </ul>
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-sm-6">
+            <div class="panel panel-primary panel-table" data-collapsed="0">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        <h3>Events</h3>
+                        <span>This month's event calendar</span>
+                    </div>
+
+                    <div class="panel-options">
+                        <a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-1" class="bg"><i class="entypo-cog"></i></a>
+                        <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
+                        <a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a>
+                        <a href="#" data-rel="close"><i class="entypo-cancel"></i></a>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div id="calendar" class="calendar-widget">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <br />
+
+
+
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="well">
+                <h1>November 04, 2015</h1>
+                <h3>Welcome to the site <strong>Art Ramadani</strong></h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="display:none">
+        <div class="col-sm-8">
+
+            <div class="panel panel-primary" id="charts_env">
+
+                @*<div class="panel-heading">
+                <div class="panel-title">Site Stats</div>
+
+                <div class="panel-options">
+                <ul class="nav nav-tabs">
+                <li class=""><a href="#area-chart" data-toggle="tab">Area Chart</a></li>
+                <li class="active"><a href="#line-chart" data-toggle="tab">Line Charts</a></li>
+                <li class=""><a href="#pie-chart" data-toggle="tab">Pie Chart</a></li>
+                </ul>
+                </div>
+                </div>*@
+
+                <div class="panel-body">
+
+                    <div class="tab-content">
+
+                        <div class="tab-pane" id="area-chart">
+                            <div id="area-chart-demo" class="morrischart" style="height: 300px"></div>
+                        </div>
+
+                        <div class="tab-pane active" id="line-chart">
+                            <div id="line-chart-demo" class="morrischart" style="height: 300px"></div>
+                        </div>
+
+                        <div class="tab-pane" id="pie-chart">
+                            <div id="donut-chart-demo" class="morrischart" style="height: 300px;"></div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+        <div class="col-sm-4">
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        <h4>
+                            Real Time Stats
+                            <br />
+                            <small>current server uptime</small>
+                        </h4>
+                    </div>
+
+                    <div class="panel-options">
+                        <a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-1" class="bg"><i class="entypo-cog"></i></a>
+                        <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
+                        <a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a>
+                        <a href="#" data-rel="close"><i class="entypo-cancel"></i></a>
+                    </div>
+                </div>
+
+                <div class="panel-body no-padding">
+                    <div id="rickshaw-chart-demo">
+                        <div id="rickshaw-legend"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <br />
+
+
+
+    <br />
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="main">
+
+        &copy; 2023 <strong>NAQIWASH</strong>  <a href="" target="_blank"></a>
+
+    </footer>
+</div>

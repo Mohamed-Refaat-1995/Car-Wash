@@ -1,0 +1,261 @@
+﻿<!doctype html>
+<html lang="ar">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>@ViewData["Title"]</title>
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@200&display=swap" rel="stylesheet">
+
+    
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="~/lib/bootstrap/dist/css/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="~/assets/css/tooplate-clean-work.css" rel="stylesheet"/>
+    <link href="~/assets/css/magnific-popup.css" rel="stylesheet"/>
+
+</head>
+
+<body dir="rtl" style="overflow-x:hidden">
+
+    <header class="site-header">
+        <div class="container">
+            <div class="row" dir="rtl">
+
+                <div class="col-md-4 col-sm-12 text-center">
+                    <p class="d-flex me-2 mb-0" id="header-item-3">
+                        <img src="~/assets/images/construction.png" width="25px" height="25px" style="display:inline" class="ps-1" />
+
+                        التنظيف شامل كافة أجزاء المركبة
+                    </p>
+                </div>
+                <div class="col-md-5 d-sm-none d-md-block">
+                    <p class="d-flex d-lg-block d-md-block d-none me-4 mb-0" id="header-item-2">
+                        <strong class="ms-2">
+                        <img src="~/assets/images/clock.png" width="25px" height="25px" style="display:inline" />
+                            مواعيد العمل من  السبت إلى الخميـس من
+                            &#1640;                                                            صباحاً
+                            إلى
+                            &#1638                                                                مساءاً
+                        </strong>
+                    </p>
+                </div>
+               <div class="col-md-3 col-sm-12">
+
+
+                    <span class=" d-flex mb-0 me-1" id="header-item-1">
+                        &nbsp;
+                        <img  src="~/assets/images/whatsapp.png" width="25px" height="25px" style="display:inline"/>
+                        <a href="tel: 01024051456" class="text-white pe-2">
+                            &#1638; &#1637; &#1636;   &#1633; &#1637; &#1632; &#1636;  &#1634;  &#1632; &#1633; &#1632;
+                        </a>
+                    </span>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+
+@*            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+*@
+            <a class="navbar-brand" href="index.html">
+                <span class="ms-2 text-dark" >ووش نقى</span>
+                <img src="https://naqiwash.com/wp-content/uploads/2021/11/Untitled-1-copy-1024x1024.png" class="logo img-fluid" alt="">
+
+            </a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+
+
+
+                    
+                    @{
+                        if (ViewData["Title"] == "Home Page")
+                            {
+                                <li class="nav-item ">
+                                    <a class="nav-link active" href="/Home/">الصفحة الرئيسية</a>
+                                </li>
+                            }
+                        else{
+                            <li class="nav-item ">
+                                <a class="nav-link " href="/Home/">الصفحة الرئيسية</a>
+                            </li>
+                        }
+                        if (ViewData["Title"] == "About Us")
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link active" href="/Home/AboutUs">من نحن </a>
+                            </li>
+
+                        }
+                        else
+                        {
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Home/AboutUs">من نحن </a>
+                            </li>
+
+                        }
+                        if (ViewData["Title"] == "Make An Order")
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link active" href="/UserInfo/FormInFo">أطلب أوردر </a>
+                            </li>
+
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                      <a class="nav-link" href="/UserInfo/FormInFo">أطلب أوردر </a>
+                            </li>
+
+                        }
+                        if (ViewData["Title"] == "Contact Us")
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link active" href="/Home/ContactUs">اتصل بنا </a>
+                            </li>
+
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Home/ContactUs">اتصل بنا </a>
+                            </li>
+
+                        }
+                    }
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid p-0">
+        <main role="main" class="pb-3">
+            @RenderBody()
+            <i class="bi bi-download"></i>
+        </main>
+    </div>
+    <div class="container-fluid p-0 mt-5">
+
+        <footer class="text-center text-lg-start text-white">
+            <!-- Grid container -->
+            <div class="container py-2">
+                <!--Grid row-->
+                <div class="row my-2">
+                    <!--1 st column-->
+                    <div class="col-lg-6 col-md-6 mb-4 mb-md-0 py-5">
+                        <h5 class="text-uppercase mb-4">تابعنا على منصات التواصل الإجتماعي </h5>
+
+                        <ul class="list-unstyled">
+                            <span>
+                                <a href="https://www.snapchat.com/add/naqiwash"><img src="https://naqiwash.com/wp-content/plugins/ultimate-social-media-icons/images/icons_theme/default/default_snapchat.png" alt="snapchat logo " class="px-3 footerIcon" loading="lazy"></a>
+                            </span>
+                            <span>
+                                <a href="https://twitter.com/naqiwash?s=21"><img src="https://naqiwash.com/wp-content/plugins/ultimate-social-media-icons/images/icons_theme/default/default_twitter.png" alt="twitter logo" class="px-3 footerIcon" loading="lazy"></a>
+                            </span>
+                            <span>
+                                <a href="https://www.instagram.com/naqiwash/"><img src="https://naqiwash.com/wp-content/plugins/ultimate-social-media-icons/images/icons_theme/default/default_instagram.png" alt="instagram logo" class="px-3 footerIcon" loading="lazy"></a>
+                            </span>
+                            <span>
+                                <a href="https://www.tiktok.com/naqiwash"><img src="https://naqiwash.com/wp-content/plugins/ultimate-social-media-icons/images/icons_theme/default/default_tiktok.png" alt="tiktok logo" class="px-3 footerIcon" loading="lazy"></a>
+                            </span>
+                        </ul>
+                    </div>
+                    <!--2nd column-->
+                    <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
+
+                        <div class="rounded-circle bg-white shadow-1-strong d-flex align-items-center justify-content-center mb-4 mx-auto mt-3" id="mainFooterLogo" style="width: 150px; height: 150px;">
+                            <img src="https://naqiwash.com/wp-content/uploads/2021/11/Untitled-1-copy-1024x1024.png" height="70" alt="" loading="lazy" />
+                        </div>
+
+                        <p class="text-center">ووش نقي ووش هنا تجد كل ما تحتاجه سيارتك </p>
+
+
+                    </div>
+
+                </div>
+                <!--Grid row-->
+                <!-- #footer-tags div ul li :hover -->
+                <div class="row my-2 ">
+                    <div class="col-lg-4 col-md-6 col-sm-12 mb-4 mb-md-0 ">
+
+                        <li class="footer-tags-items"><a class="active-nav footer-tags" href="https://naqiwash.com/retrieval/"> سياسة الأرتجاع</a></li>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 mb-4 mb-md-0">
+                        <li class="footer-tags-items"><a href="https://naqiwash.com/privacy/" class="footer-tags"> سياسة الخصوصية</a></li>
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 mb-4 mb-md-0">
+                        <li class="footer-tags-items"><a href="https://naqiwash.com/delivery/" class="footer-tags">سياسة التوصيل والخدمة</a></li>
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 mb-4 mb-md-0">
+                        <li class="footer-tags-items"><a class="footer-tags" href="https://naqiwash.com/%d8%a7%d9%84%d8%b4%d9%87%d8%a7%d8%af%d8%a9-%d8%a7%d9%84%d8%b6%d8%b1%d9%8a%d8%a8%d9%8a%d8%a9/">الشهادة الضريبية</a></li>
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 mb-4 mb-md-0">
+                        <li class="footer-tags-items"><a class="footer-tags" href="https://naqiwash.com/terms/">شروط الأستخدام   </a></li>
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 mb-4 mb-md-0">
+                        <li class="footer-tags-items"><a class="footer-tags" href="https://naqiwash.com/payment_methods/">طرق الدفع </a></li>
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 mb-4 mb-md-0">
+                        <li class="footer-tags-items"><a class="footer-tags" href="https://naqiwash.com/%d8%a7%d9%84%d8%a7%d8%b3%d8%a6%d9%84%d8%a9_%d8%a7%d9%84%d8%b4%d8%a7%d8%a6%d8%b9%d8%a9/">الأسئلة الشائعة   </a></li>
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 mb-4 mb-md-0">
+                        <li class="footer-tags-items"><a class="footer-tags" href="https://naqiwash.com/%d8%a7%d8%aa%d8%b5%d9%84-%d8%a8%d9%86%d8%a7/">اتصل بنا</a></li>
+
+                    </div>
+                    <div class="col-lg-4 col-md-6  mb-4 mb-md-0">
+                        <li class="footer-tags-items"><a class="footer-tags" href="https://naqiwash.com/">المتجر</a></li>
+
+                    </div>
+
+
+                </div>
+            </div>
+            <!-- Grid container -->
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+                © 2023 Copyright:
+                <a class="text-white" href="https://naqiwash.com/">Naqi Wash</a>
+            </div>
+            <!-- Copyright -->
+        </footer>
+
+    </div>
+    <!-- JAVASCRIPT FILES -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.backstretch.min.js"></script>
+    <script src="js/counter.js"></script>
+    <script src="js/countdown.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/modernizr.js"></script>
+    <script src="js/animated-headline.js"></script>
+    <script src="js/custom.js"></script>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

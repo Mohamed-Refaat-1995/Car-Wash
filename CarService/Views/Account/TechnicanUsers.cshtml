@@ -1,0 +1,113 @@
+﻿@model CarService.ViewModel.RegistrationViewModel
+
+
+@{
+    //ViewData["Title"] = "CoordinatorUsers";
+    Layout = "_NavAndFooter";
+}
+
+<main id="main">
+    <!-- ======= Featured Section ======= -->
+    <section id="featured" class="featured">
+        <div class="container">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col">
+                    <div class="card card-registration my-4">
+                        <div class="row g-0">
+                            <div class="col-xl-6 d-none d-xl-block">
+                                <img src="/assets/img/signUp.jpg"
+                                     alt="Sample photo" class="img-fluid"
+                                     style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem; height: 100%;" />
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="card-body p-md-5 text-black">
+                                    <h3 class="mb-5 text-uppercase">قم بتسجيل بياناتك</h3>
+
+                                    <div class="row">
+                                        <div>
+                                            <form asp-action="TechnicanUsers">
+                                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                                <div class="form-group mb-4">
+                                                    <label asp-for="UserName" class="control-label"> أسم المستخدم</label>
+                                                    <input asp-for="UserName" class="form-control" />
+                                                    <span asp-validation-for="UserName" class="text-danger"></span>
+                                                </div>
+
+
+                                                <div class="row mb-4">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="control-label" for="form5Example1">الأسم الأول</label>
+                                                            <input asp-for="FirstName" type="text" class="form-control form-control-lg" />
+                                                            <span asp-validation-for="FirstName" class="text-danger"></span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="control-label" for="form5Example1">الأسم الأخير</label>
+                                                            <input asp-for="LastName" type="text" class="form-control form-control-lg" />
+                                                            <span asp-validation-for="LastName" class="text-danger"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group mb-4">
+                                                    <label class="control-label">المدينه</label>
+
+                                                    <select asp-for="CityID" id="CityID" class="form-control">
+                                                        <option selected>اختر المدينه </option>
+                                                        @foreach (City cityItem in ViewBag.Cities)
+                                                        {
+                                                            <option value="@cityItem.Id">@cityItem.Name</option>
+                                                        }
+                                                    </select>
+
+                                                    <span asp-validation-for="CityID" class="text-danger"></span>
+                                                </div>
+
+
+                                                <div class="form-group mb-4">
+                                                    <label asp-for="Password" class="control-label" for="form5Example1">كلمة المرور</label>
+                                                    <input asp-for="Password" type="Password" class="form-control form-control-lg" />
+                                                    <span asp-validation-for="Password" class="text-danger"></span>
+                                                </div>
+
+
+                                                <div class="form-group mb-4">
+                                                    <label asp-for="ConfirmPassword" class="control-label" for="form5Example1">تأكيد كلمة المرور</label>
+                                                    <input asp-for="ConfirmPassword" type="Password" class="form-control form-control-lg" />
+                                                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                                                </div>
+
+
+                                                <div class="form-group mb-4">
+                                                    <label asp-for="Address" class="control-label" for="form5Example1">العنوان</label>
+                                                    <input asp-for="Address" type="text" class="form-control form-control-lg" />
+                                                    <span asp-validation-for="Address" class="text-danger"></span>
+                                                </div>
+
+                                                <div class="form-group mb-4">
+                                                    <!-- Submit button -->
+                                                    <button type="submit" value="Create" class="btn btn-primary btn-block mb-4 btn-rounded" style="width: 100%;"><span>تأكيد</span></button>
+                                                    <!-- <a class="btn btn-info-gradiant btn-md btn-rounded border-0 text-white" href="#f40"><span>أضغط هنا</span></a> -->
+                                                </div>
+
+
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</main>
+
+
+
+

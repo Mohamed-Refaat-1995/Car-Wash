@@ -1,0 +1,108 @@
+/* @import url(//fonts.googleapis.com/css?family=Montserrat:300,400,500); */
+.service-40 {
+  font-family: "Montserrat", sans-serif;
+	color: #8d97ad;
+  font-weight: 300;
+}
+
+.service-40 h1, .service-40 h2, .service-40 h3, .service-40 h4, .service-40 h5, .service-40 h6 {
+  color: #3e4555 ;
+}
+
+.service-40 .bg-light {
+    background-color: #f4f8fa !important;
+}
+
+.service-40 .badge {
+	line-height: 14px;
+}
+
+.service-40 .badge-danger {
+	background-color: #ff4d7e !important;
+}
+
+.service-40.wrap-feature40-box {
+  background-position: left top, top right;
+  background-repeat: no-repeat, no-repeat;
+}
+
+.service-40 .btn-info-gradiant {
+		background: #188ef4;
+    background: -webkit-linear-gradient(legacy-direction(to right), #188ef4 0%, #316ce8 100%);
+    background: -webkit-gradient(linear, left top, right top, from(#188ef4), to(#316ce8));
+    background: -webkit-linear-gradient(left, #188ef4 0%, #316ce8 100%);
+    background: -o-linear-gradient(left, #188ef4 0%, #316ce8 100%);
+    background: linear-gradient(to right, #188ef4 0%, #316ce8 100%);
+}
+
+.service-40 .btn-info-gradiant:hover {
+		background: #316ce8;
+    background: -webkit-linear-gradient(legacy-direction(to right), #316ce8 0%, #188ef4 100%);
+    background: -webkit-gradient(linear, left top, right top, from(#316ce8), to(#188ef4));
+    background: -webkit-linear-gradient(left, #316ce8 0%, #188ef4 100%);
+    background: -o-linear-gradient(left, #316ce8 0%, #188ef4 100%);
+    background: linear-gradient(to right, #316ce8 0%, #188ef4 100%);
+}
+
+.service-40 .btn-md {
+    padding: 15px 45px;
+    font-size: 16px;
+    display: block;
+}
+/* callcenter cards css end  */
+/*--------------------------------------------------------------
+# Featured
+--------------------------------------------------------------*/
+.featured {
+  position: relative;
+  z-index: 2;
+}
+
+.featured .icon-box {
+  padding: 40px 30px;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  background: #fff;
+  transition: all ease-in-out 0.3s;
+  height: 100%;
+}
+
+.featured .icon-box i {
+  color: #5691e9;
+  font-size: 50px;
+  margin-bottom: 30px;
+  display: block;
+  line-height: 0;
+  text-align: center;
+}
+
+.featured .icon-box h3 {
+  font-weight: 800;
+  margin-bottom: 17px;
+  font-size: 35px;
+  text-align: center;
+}
+
+.featured .icon-box h3 a {
+  color: #545454;
+  transition: 0.3s;
+}
+
+.featured .icon-box p {
+  color: #545454;
+  line-height: 24px;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+    .featured .icon-box:hover {
+  background: whitesmoke;
+  color: #5691e9;
+}
+.featured .icon-box:hover i,
+.featured .icon-box:hover h3 a,
+.featured .icon-box:hover p {
+  color: #5691e9;
+}
+
+
+

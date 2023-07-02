@@ -1,0 +1,271 @@
+﻿@model List<CallCenterDataVM>
+
+@{
+    ViewData["Title"] = "Table";
+    Layout = "_NavAndFooter";
+}
+
+<main id="main">
+    <!-- ======= Featured Section ======= -->
+    <section id="featured" class="featured">
+        <div class="container" style="margin-top: 5%; width:100vw;" >
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel">
+                        <div class="alert alert-primary" id="alert" style="display:none;" role="alert">
+                            لديك عدد <span id="counter"> </span>طلبات جديدة  <a href="/CallCenters/index" class="alert alert-link ">عرض الطلبات </a>
+                        </div>
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-sm-3 col-xs-12">
+                                    <h4 class="title mx-4">قسم <span>التواصل</span></h4>
+                                </div>
+                                <div class="col-sm-9 col-xs-12 text-right">
+                                    <div class="btn_group">
+                                        <input type="text" class="form-control" placeholder="Search">
+                                        <button class="btn btn-default" title="Reload"><i class="fa fa-sync-alt"></i></button>
+                                        <button class="btn btn-default" title="Pdf"><i class="fa fa-file-pdf"></i></button>
+                                        <button class="btn btn-default" title="Excel"><i class="fas fa-file-excel"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" value="@ViewBag.CallCenterId" id="CallCenterId" />
+                       
+                        
+                        
+
+
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+        <div class="container">
+            <div class="col-12">
+                <div class="table-responsive">
+                    <table class="fl-table table-sm">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>التاريخ</th>
+                                <th>الوقت</th>
+                                <th>المدينة</th>
+                                <th>الحي</th>
+                                <th>حجم السيارة</th>
+                                <th>رقم العميل</th>
+                                <th>الاسم </th>
+
+
+                                <!-- <th>الموظف</th> -->
+                                <th>الحالة</th>
+                                <th>طريقة الدفع</th>
+                                <th>ملحوظة</th>
+                                <th> تاريخ الخدمة </th>
+                                <th> source </th>
+                                <th> تعديل او تأكيد</th>
+                            </tr>
+                        </thead>
+                        
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <form asp-action="AddClient">
+                                    <td>@item.Id</td>
+                                    <input type="hidden" name="id" value="@item.Id" />
+
+                                    <td>@item.Date </td>
+                                    <input type="hidden" name="Date" value="@item.Date" />
+
+                                    <td>@item.Time</td>
+                                    <input type="hidden" name="Time" value="@item.Time" />
+
+                                    <td>@item.City</td>
+                                    <input type="hidden" name="City" value="@item.City" />
+
+                                    <td>@item.Destrict</td>
+                                    <input type="hidden" name="Destrict" value="@item.Destrict" />
+
+                                    <td>@item.Service</td>
+                                    <input type="hidden" name="Service" value="@item.Service" />
+
+                                    <td>@item.PhoneNumber</td>
+                                    <input type="hidden" name="PhoneNumber" value="@item.PhoneNumber" />
+
+                                    <td><input type="text" name="Name" /></td>
+
+                                    <td>
+                                        <select name="OrderStatus" class="form-select" aria-label="Default select example">
+                                            <option>اختر الحاله</option>
+                                            <option value="غيرجاد">غير جاد</option>
+                                            <option value="موعد">موعد</option>
+                                            <option value="استفسار">استفسار</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                       @* هل دول طرق ثابته ولا؟؟*@
+                                        <select name="Price" class="form-select" aria-label="Default select example">
+                                            <option> اختر الطريقة</option>
+                                            <option value="تابي">تابي</option>
+                                            <option value="كاش">كاش</option>
+                                            <option value="تحويلة">تحويلة</option>
+                                        </select>
+                                    </td>
+                                    <td><input type="text" name="Notes" /> </td>
+                                    <td><input type="date" name="ServiceDate" /></td>
+                                    <td><input type="text" name="Source" /></td>
+                                    <td>
+
+                                        <button data-tip="check"><input type="submit" style="display:none;" /><i class="fa-solid fa-circle-check"></i></button>
+                                            @*<li><a href="DeleteCLient/@item.Id" class="btn btn-primary"><i class="fa fa-trash"></i></a> </li>*@
+
+                                    </td>
+                                    </form>
+                                </tr>
+                            }
+                        <tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+        <div id="div1"></div>
+        
+    </section>
+</main>
+
+
+@section scripts{
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.3/signalr.min.js"
+            integrity="sha512-/rQxup+foY5qwZmEmvBhb0PHxx/Fd+ESH7Xw+pozdSKhygl+ZSQm1X6LWDQrxz+NoRAZwR03X78UinlY1C4RrQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+
+        //1-declare hub "URL"
+        var hub = new signalR.HubConnectionBuilder().withUrl("/AddOrder").
+            build();
+        //2-start connect as online client
+        hub.start().then(function () {
+            console.log("Connected@@");
+    });
+
+        var CallCenterId = $("#CallCenterId").val();
+        console.log("CID"+CallCenterId);
+        var count = 0;
+        hub.on("NewOrderAdded", function (obj,city) {
+            count = count + 1;
+            console.log(obj);
+            console.log(city);
+            //window.alert(obj.date.Value.ToShortDateString());
+            //console.log(obj.date.Value.ToShortDateString());
+
+
+            if (obj.callCenterId== CallCenterId){
+                document.getElementById("alert").style.display = "block";
+                //$('#div1').append(
+
+                //    `<tr><tbody>
+                //                                 <form action="/CallCenters/AddClient" method="post" name="form1">
+                //                                    <td>16</td>
+                //                                    <input type="hidden" name="id" value="${obj.id}" />
+
+                //                                    <td>4/4/2023 </td>
+                //                                    <input type="hidden" name="Date" value="4/4/2023" />
+
+                //                                    <td>11:58</td>
+                //                                    <input type="hidden" name="Time" value="4/4/2023" />
+
+                //                                    <td>&#x631;&#x64A;&#x627;&#x636;</td>
+                //                                    <input type="hidden" name="City" value="&#x631;&#x64A;&#x627;&#x636;" />
+
+                //                                    <td>&#x62D;&#x649; 5</td>
+                //                                    <input type="hidden" name="Destrict" value="&#x62D;&#x649; 5" />
+
+                //                                    <td>&#x62A;&#x644;&#x645;&#x64A;&#x639; &#x62F;&#x627;&#x62E;&#x644;&#x64A; &#x645;&#x62A;&#x646;&#x642;&#x644;</td>
+                //                                    <input type="hidden" name="Service" value="&#x62A;&#x644;&#x645;&#x64A;&#x639; &#x62F;&#x627;&#x62E;&#x644;&#x64A; &#x645;&#x62A;&#x646;&#x642;&#x644;" />
+
+                //                                    <td>0512345678</td>
+                //                                    <input type="hidden" name="PhoneNumber" value="0512345678" />
+
+                //                                    <td><input type="text" name="Name" /></td>
+
+                //                                    <td>
+                //                                        <select name="OrderStatus" class="form-select" aria-label="Default select example">
+                //                                            <option>اختر الحاله</option>
+                //                                            <option value="&#x63A;&#x64A;&#x631;&#x62C;&#x627;&#x62F;">غير جاد</option>
+                //                                            <option value="&#x645;&#x648;&#x639;&#x62F;">موعد</option>
+                //                                            <option value="&#x627;&#x633;&#x62A;&#x641;&#x633;&#x627;&#x631;">استفسار</option>
+                //                                        </select>
+                //                                    </td>
+                //                                    <td>
+                //                               <select name="Price" class="form-select" aria-label="Default select example">
+                //                                            <option> اختر الطريقة</option>
+                //                                            <option value="&#x62A;&#x627;&#x628;&#x64A;">تابي</option>
+                //                                            <option value="&#x643;&#x627;&#x634;">كاش</option>
+                //                                            <option value="&#x62A;&#x62D;&#x648;&#x64A;&#x644;&#x629;">تحويلة</option>
+                //                                        </select>
+                //                                    </td>
+                //                                    <td><input type="text" name="Notes" /> </td>
+                //                                    <td><input type="date" name="ServiceDate" /></td>
+                //                                    <td><input type="text" name="Source" /></td>
+                //                                    <td>
+
+                //                                            <input type="submit"  /><i class="fa-solid fa-circle-check"></i>
+
+                //                                    </td>
+                //                                    </form>
+                //                                </tbody>
+                //                                </tr>
+
+                //               `
+                //);
+            }
+            document.getElementById("counter").textContent = count;
+
+        });
+
+
+        $(".delete").click(function () {
+          $(this).closest("tr").remove();
+        });
+        function test(){
+            alert("heelo");
+        }
+    </script>
+
+
+    <!-- jQuery -->
+    <script src="/js/jquery-2.1.0.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="/js/popper.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+
+    <!-- Plugins -->
+    <script src="/js/owl-carousel.js"></script>
+    <script src="/js/accordions.js"></script>
+    <script src="/js/datepicker.js"></script>
+    <script src="/js/scrollreveal.min.js"></script>
+    <script src="/js/waypoints.min.js"></script>
+    <script src="/js/jquery.counterup.min.js"></script>
+    <script src="/js/imgfix.min.js"></script>
+    <script src="/js/slick.js"></script>
+    <script src="/js/lightbox.js"></script>
+    <script src="/js/isotope.js"></script>
+
+    <!-- Global Init -->
+    <script src="/js/custom.js"></script>
+
+
+
+
+
+
+
+
+}

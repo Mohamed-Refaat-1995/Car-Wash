@@ -1,0 +1,649 @@
+﻿@model List<TechnicanVM>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_NavAndFooter";
+}
+<main id="main">
+    <!-- ======= Featured Section ======= -->
+    <section id="featured" class="featured">
+        <div class="container" style="margin-top: 5%;">
+            <div class="row" style="width: 100%;">
+                <div class="col-md-offset-1 col-md-10" style="width: 100%;">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col col-sm-3 col-xs-12">
+                                    <h4 class="title">قسم <span>الفنيين</span></h4>
+                                </div>
+                                <div class="col-sm-9 col-xs-12 text-right">
+                                    <div class="btn_group">
+                                        <input type="text" class="form-control" placeholder="Search">
+                                        <button class="btn btn-default" title="Reload"><i class="fa fa-sync-alt"></i></button>
+                                        <button class="btn btn-default" title="Pdf"><i class="fa fa-file-pdf"></i></button>
+                                        <button class="btn btn-default" title="Excel"><i class="fas fa-file-excel"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                       @* <div class="panel-body table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>اسم العميل</th>
+                                        <th>المدينه</th>
+                                        <th>الحى</th>
+                                        <th>الخدمه</th>
+                                        <th>طريقه الدفع</th>
+                                        <th>ملاحظات</th>
+
+
+                                        <th>يوم التنفيذ</th>
+                                        <th>وقت التنفيذ</th>
+                                        <th>تم الدفع</th>
+                                        <th>الحاله</th>
+                                        <th>الموقع</th>
+                                        <th>صوره الحاله</th>
+                                        <th>تاكيد</th>
+
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var CD in Model)
+                                    {
+                                        <form id="myForm" asp-action="TechnicanUpdatedData" enctype="multipart/form-data">
+                                            <tr>
+                                                <td>@CD.Id</td>
+                                                <input type="hidden" name="Id" value="@CD.Id" />
+                                                <td>@CD.ClientName</td>
+                                                <input type="hidden" name="ClientName" value="@CD.ClientName" />
+                                                <td>@CD.City</td>
+                                                <input type="hidden" name="City" value="@CD.City" />
+                                                <td>@CD.Destrict</td>
+                                                <input type="hidden" name="Destrict" value="@CD.Destrict" />
+                                                <td>@CD.Service</td>
+                                                <input type="hidden" name="Service" value="@CD.Service" />
+                                                <td>@CD.PaymentMethod</td>
+                                                <input type="hidden" name="PaymentMethod" value="@CD.PaymentMethod" />
+                                                <td>@CD.Notes</td>
+                                                <input type="hidden" name="Notes" value="@CD.Notes" />
+
+                                                <td>
+                                                    @CD.Date
+                                                </td>
+                                                <td>
+                                                    @CD.Time
+                                                </td>
+                                                @if (CD.IsPayed==true)
+                                                {
+                                                        <td>تم الدفع </td>
+                                                }
+                                                else
+                                                {
+                                                        <td>لم يتم الدفع </td>
+                                                }
+
+
+                                                <td>
+                                                <select id="Status" name="StatusId" class="form-select" aria-label="Default select example">
+
+
+                                                        @if (CD.StatusId == null)
+                                                        {
+                                                        <option selected> اختر الان </option>
+                                                        <option value="1">متجه للعميل</option>
+                                                        <option value="2">وصلت للعميل</option>
+                                                        <option value="3">جاري خدمة العميل</option>
+                                                        <option value="4">تم خدمة العميل</option>
+                                                        <option value="5">تم الدفع</option>
+                                                        <option value="6">تم ارسال الفاتورة</option>
+                                                        <option value="7">تم الانتهاء </option>
+
+                                                        }
+                                                        else if (CD.StatusId == 1)
+                                                        {
+                                                        <option> اختر الان </option>
+                                                        <option selected value="1">متجه للعميل</option>
+                                                        <option value="2">وصلت للعميل</option>
+                                                        <option value="3">جاري خدمة العميل</option>
+                                                        <option value="4">تم خدمة العميل</option>
+                                                        <option value="5">تم الدفع</option>
+                                                        <option value="6">تم ارسال الفاتورة</option>
+                                                        <option value="7">تم الانتهاء </option>
+
+                                                        }
+                                                        else if (CD.StatusId == 2)
+                                                        {
+                                                        <option> اختر الان </option>
+                                                        <option value="1">متجه للعميل</option>
+                                                        <option selected value="2">وصلت للعميل</option>
+                                                        <option value="3">جاري خدمة العميل</option>
+                                                        <option value="4">تم خدمة العميل</option>
+                                                        <option value="5">تم الدفع</option>
+                                                        <option value="6">تم ارسال الفاتورة</option>
+                                                        <option value="7">تم الانتهاء </option>
+
+                                                        }
+                                                        else if (CD.StatusId == 3)
+                                                        {
+                                                        <option> اختر الان </option>
+                                                        <option value="1">متجه للعميل</option>
+                                                        <option value="2">وصلت للعميل</option>
+                                                        <option selected value="3">جاري خدمة العميل</option>
+                                                        <option value="4">تم خدمة العميل</option>
+                                                        <option value="5">تم الدفع</option>
+                                                        <option value="6">تم ارسال الفاتورة</option>
+                                                        <option value="7">تم الانتهاء </option>
+
+                                                        }
+                                                        else if (CD.StatusId == 4)
+                                                        {
+                                                        <option> اختر الان </option>
+                                                        <option value="1">متجه للعميل</option>
+                                                        <option value="2">وصلت للعميل</option>
+                                                        <option value="3">جاري خدمة العميل</option>
+                                                        <option selected value="4">تم خدمة العميل</option>
+                                                        <option value="5">تم الدفع</option>
+                                                        <option value="6">تم ارسال الفاتورة</option>
+                                                        <option value="7">تم الانتهاء </option>
+
+                                                        }
+                                                        else if (CD.StatusId == 5)
+                                                        {
+                                                        <option> اختر الان </option>
+                                                        <option value="1">متجه للعميل</option>
+                                                        <option value="2">وصلت للعميل</option>
+                                                        <option value="3">جاري خدمة العميل</option>
+                                                        <option value="4">تم خدمة العميل</option>
+                                                        <option selected value="5">تم الدفع</option>
+                                                        <option value="6">تم ارسال الفاتورة</option>
+                                                        <option value="7">تم الانتهاء </option>
+
+
+                                                        }
+                                                        else if (CD.StatusId == 6)
+                                                        {
+                                                        <option> اختر الان </option>
+                                                        <option value="1">متجه للعميل</option>
+                                                        <option value="2">وصلت للعميل</option>
+                                                        <option value="3">جاري خدمة العميل</option>
+                                                        <option value="4">تم خدمة العميل</option>
+                                                        <option value="5">تم الدفع</option>
+                                                        <option selected value="6">تم ارسال الفاتورة</option>
+                                                        <option value="7">تم الانتهاء </option>
+                                                        }
+
+
+                                                </select>
+                                              @*  <select id="Status" name="StatusId" class="form-select" aria-label="Default select example">
+
+
+                                                        @if (CD.StatusId == null)
+                                                        {
+                                                                    <option selected> اختر الان </option>
+                                                                    <option value="1">متجه للعميل</option>
+                                                                    <option value="2">وصلت للعميل</option>
+                                                                    <option value="3">جاري خدمة العميل</option>
+                                                                    <option value="4">تم خدمة العميل</option>
+                                                                    <option value="5">تم الدفع</option>
+                                                                    <option value="6">تم ارسال الفاتورة</option>
+                                                                    <option value="7">تم الانتهاء </option>
+
+                                                        }
+                                                        else if (CD.StatusId == 1)
+                                                        {
+                                                                    <option > اختر الان </option>
+                                                                    <option selected value="1">متجه للعميل</option>
+                                                                    <option value="2">وصلت للعميل</option>
+                                                                    <option value="3">جاري خدمة العميل</option>
+                                                                    <option value="4">تم خدمة العميل</option>
+                                                                    <option value="5">تم الدفع</option>
+                                                                    <option value="6">تم ارسال الفاتورة</option>
+                                                                    <option value="7">تم الانتهاء </option>
+
+                                                        }
+                                                        else if (CD.StatusId == 2)
+                                                        {
+                                                                    <option> اختر الان </option>
+                                                                    <option value="1">متجه للعميل</option>
+                                                                    <option selected value="2">وصلت للعميل</option>
+                                                                    <option value="3">جاري خدمة العميل</option>
+                                                                    <option value="4">تم خدمة العميل</option>
+                                                                    <option value="5">تم الدفع</option>
+                                                                    <option value="6">تم ارسال الفاتورة</option>
+                                                                    <option value="7">تم الانتهاء </option>
+
+                                                        }
+                                                        else if (CD.StatusId == 3)
+                                                        {
+                                                                    <option> اختر الان </option>
+                                                                    <option value="1">متجه للعميل</option>
+                                                                    <option value="2">وصلت للعميل</option>
+                                                                    <option selected value="3">جاري خدمة العميل</option>
+                                                                    <option value="4">تم خدمة العميل</option>
+                                                                    <option value="5">تم الدفع</option>
+                                                                    <option value="6">تم ارسال الفاتورة</option>
+                                                                    <option value="7">تم الانتهاء </option>
+
+                                                        }
+                                                        else if (CD.StatusId == 4)
+                                                        {
+                                                                    <option> اختر الان </option>
+                                                                    <option value="1">متجه للعميل</option>
+                                                                    <option value="2">وصلت للعميل</option>
+                                                                    <option value="3">جاري خدمة العميل</option>
+                                                                    <option selected value="4">تم خدمة العميل</option>
+                                                                    <option value="5">تم الدفع</option>
+                                                                    <option value="6">تم ارسال الفاتورة</option>
+                                                                    <option value="7">تم الانتهاء </option>
+
+                                                        }
+                                                        else if (CD.StatusId == 5)
+                                                        {
+                                                                    <option> اختر الان </option>
+                                                                    <option value="1">متجه للعميل</option>
+                                                                    <option value="2">وصلت للعميل</option>
+                                                                    <option value="3">جاري خدمة العميل</option>
+                                                                    <option value="4">تم خدمة العميل</option>
+                                                                    <option selected value="5">تم الدفع</option>
+                                                                    <option value="6">تم ارسال الفاتورة</option>
+                                                                    <option value="7">تم الانتهاء </option>
+
+
+                                                        }
+                                                        else if (CD.StatusId == 6)
+                                                        {
+                                                                    <option> اختر الان </option>
+                                                                    <option value="1">متجه للعميل</option>
+                                                                    <option value="2">وصلت للعميل</option>
+                                                                    <option value="3">جاري خدمة العميل</option>
+                                                                    <option value="4">تم خدمة العميل</option>
+                                                                    <option value="5">تم الدفع</option>
+                                                                    <option selected value="6">تم ارسال الفاتورة</option>
+                                                                    <option value="7">تم الانتهاء </option>
+                                                        }
+
+
+                                                    </select>
+                                                </td>
+
+                                              <td>
+                                                    @if (CD.location != null)
+                                                    {
+
+                                                             <input type="text"  value="@CD.location" id="selectedLocation" name="location">
+                                                    }
+                                                    else
+                                                    {
+                                                                <input type="text"  value="" id="selectedLocation" name="location">
+
+                                                    }
+                                                    </td>
+
+                                                <td>
+                                                    <div class="form-group">
+                                                        @<label class="control-label">ارفع صوره قبل الخدمة</label>@
+                                                      <input type="file" name="ImageStatusFile" accept="image/*" class="form-control" />
+                                                    <span name="ImageStatus" class="text-danger"></span>
+                                                    </div>
+                                                </td>
+                                               
+
+                                                <td>
+                                                    <button data-tip="check" type="submit">
+                                                        <i class="fa-solid fa-circle-check"></i>
+                                                         
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            </form>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>*@
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        
+        <div class="container">
+            <div class="col-12">
+                <div class="table-wrapper mx-4 table-responsive">
+                    <table class="fl-table">
+                        <thead>
+                            <tr>
+                                         <th>#</th>
+                                        <th>اسم العميل</th>
+                                        <th>المدينه</th>
+                                        <th>الحى</th>
+                                        <th>الخدمه</th>
+                                        <th>طريقه الدفع</th>
+                                        <th>ملاحظات</th>
+
+
+                                        <th>يوم التنفيذ</th>
+                                        <th>وقت التنفيذ</th>
+                                        <th>تم الدفع</th>
+                                        <th>الحاله</th>
+                                        <th>الموقع</th>
+                                        <th>صوره الحاله</th>
+                                        <th>تاكيد</th>
+
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var CD in Model)
+                                    {
+                                        <form id="myForm" asp-action="TechnicanUpdatedData" enctype="multipart/form-data">
+                                            <tr>
+                                                <td>@CD.Id</td>
+                                                <input type="hidden" name="Id" value="@CD.Id" />
+                                                <td>@CD.ClientName</td>
+                                                <input type="hidden" name="ClientName" value="@CD.ClientName" />
+                                                <td>@CD.City</td>
+                                                <input type="hidden" name="City" value="@CD.City" />
+                                                <td>@CD.Destrict</td>
+                                                <input type="hidden" name="Destrict" value="@CD.Destrict" />
+                                                <td>@CD.Service</td>
+                                                <input type="hidden" name="Service" value="@CD.Service" />
+                                                <td>@CD.PaymentMethod</td>
+                                                <input type="hidden" name="PaymentMethod" value="@CD.PaymentMethod" />
+                                                <td>@CD.Notes</td>
+                                                <input type="hidden" name="Notes" value="@CD.Notes" />
+
+                                                <td>
+                                                    @CD.Date
+                                                </td>
+                                                <td>
+                                                    @CD.Time
+                                                </td>
+                                                @if (CD.IsPayed==true)
+                                                {
+                                                        <td>تم الدفع </td>
+                                                }
+                                                else
+                                                {
+                                                        <td>لم يتم الدفع </td>
+                                                }
+
+
+                                                <td>
+                                                <select id="Status" name="StatusId" class="form-select" aria-label="Default select example">
+
+
+                                                        @if (CD.StatusId == null)
+                                                        {
+                                                        <option selected> اختر الان </option>
+                                                        <option value="1">متجه للعميل</option>
+                                                        <option value="2">وصلت للعميل</option>
+                                                        <option value="3">جاري خدمة العميل</option>
+                                                        <option value="4">تم خدمة العميل</option>
+                                                        <option value="5">تم الدفع</option>
+                                                        <option value="6">تم ارسال الفاتورة</option>
+                                                        <option value="7">تم الانتهاء </option>
+
+                                                        }
+                                                        else if (CD.StatusId == 1)
+                                                        {
+                                                        <option> اختر الان </option>
+                                                        <option selected value="1">متجه للعميل</option>
+                                                        <option value="2">وصلت للعميل</option>
+                                                        <option value="3">جاري خدمة العميل</option>
+                                                        <option value="4">تم خدمة العميل</option>
+                                                        <option value="5">تم الدفع</option>
+                                                        <option value="6">تم ارسال الفاتورة</option>
+                                                        <option value="7">تم الانتهاء </option>
+
+                                                        }
+                                                        else if (CD.StatusId == 2)
+                                                        {
+                                                        <option> اختر الان </option>
+                                                        <option value="1">متجه للعميل</option>
+                                                        <option selected value="2">وصلت للعميل</option>
+                                                        <option value="3">جاري خدمة العميل</option>
+                                                        <option value="4">تم خدمة العميل</option>
+                                                        <option value="5">تم الدفع</option>
+                                                        <option value="6">تم ارسال الفاتورة</option>
+                                                        <option value="7">تم الانتهاء </option>
+
+                                                        }
+                                                        else if (CD.StatusId == 3)
+                                                        {
+                                                        <option> اختر الان </option>
+                                                        <option value="1">متجه للعميل</option>
+                                                        <option value="2">وصلت للعميل</option>
+                                                        <option selected value="3">جاري خدمة العميل</option>
+                                                        <option value="4">تم خدمة العميل</option>
+                                                        <option value="5">تم الدفع</option>
+                                                        <option value="6">تم ارسال الفاتورة</option>
+                                                        <option value="7">تم الانتهاء </option>
+
+                                                        }
+                                                        else if (CD.StatusId == 4)
+                                                        {
+                                                        <option> اختر الان </option>
+                                                        <option value="1">متجه للعميل</option>
+                                                        <option value="2">وصلت للعميل</option>
+                                                        <option value="3">جاري خدمة العميل</option>
+                                                        <option selected value="4">تم خدمة العميل</option>
+                                                        <option value="5">تم الدفع</option>
+                                                        <option value="6">تم ارسال الفاتورة</option>
+                                                        <option value="7">تم الانتهاء </option>
+
+                                                        }
+                                                        else if (CD.StatusId == 5)
+                                                        {
+                                                        <option> اختر الان </option>
+                                                        <option value="1">متجه للعميل</option>
+                                                        <option value="2">وصلت للعميل</option>
+                                                        <option value="3">جاري خدمة العميل</option>
+                                                        <option value="4">تم خدمة العميل</option>
+                                                        <option selected value="5">تم الدفع</option>
+                                                        <option value="6">تم ارسال الفاتورة</option>
+                                                        <option value="7">تم الانتهاء </option>
+
+
+                                                        }
+                                                        else if (CD.StatusId == 6)
+                                                        {
+                                                        <option> اختر الان </option>
+                                                        <option value="1">متجه للعميل</option>
+                                                        <option value="2">وصلت للعميل</option>
+                                                        <option value="3">جاري خدمة العميل</option>
+                                                        <option value="4">تم خدمة العميل</option>
+                                                        <option value="5">تم الدفع</option>
+                                                        <option selected value="6">تم ارسال الفاتورة</option>
+                                                        <option value="7">تم الانتهاء </option>
+                                                        }
+
+
+                                                </select>
+                                               <select id="Status" name="StatusId" class="form-select" aria-label="Default select example">
+
+
+                                                        @if (CD.StatusId == null)
+                                                        {
+                                                                    <option selected> اختر الان </option>
+                                                                    <option value="1">متجه للعميل</option>
+                                                                    <option value="2">وصلت للعميل</option>
+                                                                    <option value="3">جاري خدمة العميل</option>
+                                                                    <option value="4">تم خدمة العميل</option>
+                                                                    <option value="5">تم الدفع</option>
+                                                                    <option value="6">تم ارسال الفاتورة</option>
+                                                                    <option value="7">تم الانتهاء </option>
+
+                                                        }
+                                                        else if (CD.StatusId == 1)
+                                                        {
+                                                                    <option > اختر الان </option>
+                                                                    <option selected value="1">متجه للعميل</option>
+                                                                    <option value="2">وصلت للعميل</option>
+                                                                    <option value="3">جاري خدمة العميل</option>
+                                                                    <option value="4">تم خدمة العميل</option>
+                                                                    <option value="5">تم الدفع</option>
+                                                                    <option value="6">تم ارسال الفاتورة</option>
+                                                                    <option value="7">تم الانتهاء </option>
+
+                                                        }
+                                                        else if (CD.StatusId == 2)
+                                                        {
+                                                                    <option> اختر الان </option>
+                                                                    <option value="1">متجه للعميل</option>
+                                                                    <option selected value="2">وصلت للعميل</option>
+                                                                    <option value="3">جاري خدمة العميل</option>
+                                                                    <option value="4">تم خدمة العميل</option>
+                                                                    <option value="5">تم الدفع</option>
+                                                                    <option value="6">تم ارسال الفاتورة</option>
+                                                                    <option value="7">تم الانتهاء </option>
+
+                                                        }
+                                                        else if (CD.StatusId == 3)
+                                                        {
+                                                                    <option> اختر الان </option>
+                                                                    <option value="1">متجه للعميل</option>
+                                                                    <option value="2">وصلت للعميل</option>
+                                                                    <option selected value="3">جاري خدمة العميل</option>
+                                                                    <option value="4">تم خدمة العميل</option>
+                                                                    <option value="5">تم الدفع</option>
+                                                                    <option value="6">تم ارسال الفاتورة</option>
+                                                                    <option value="7">تم الانتهاء </option>
+
+                                                        }
+                                                        else if (CD.StatusId == 4)
+                                                        {
+                                                                    <option> اختر الان </option>
+                                                                    <option value="1">متجه للعميل</option>
+                                                                    <option value="2">وصلت للعميل</option>
+                                                                    <option value="3">جاري خدمة العميل</option>
+                                                                    <option selected value="4">تم خدمة العميل</option>
+                                                                    <option value="5">تم الدفع</option>
+                                                                    <option value="6">تم ارسال الفاتورة</option>
+                                                                    <option value="7">تم الانتهاء </option>
+
+                                                        }
+                                                        else if (CD.StatusId == 5)
+                                                        {
+                                                                    <option> اختر الان </option>
+                                                                    <option value="1">متجه للعميل</option>
+                                                                    <option value="2">وصلت للعميل</option>
+                                                                    <option value="3">جاري خدمة العميل</option>
+                                                                    <option value="4">تم خدمة العميل</option>
+                                                                    <option selected value="5">تم الدفع</option>
+                                                                    <option value="6">تم ارسال الفاتورة</option>
+                                                                    <option value="7">تم الانتهاء </option>
+
+
+                                                        }
+                                                        else if (CD.StatusId == 6)
+                                                        {
+                                                                    <option> اختر الان </option>
+                                                                    <option value="1">متجه للعميل</option>
+                                                                    <option value="2">وصلت للعميل</option>
+                                                                    <option value="3">جاري خدمة العميل</option>
+                                                                    <option value="4">تم خدمة العميل</option>
+                                                                    <option value="5">تم الدفع</option>
+                                                                    <option selected value="6">تم ارسال الفاتورة</option>
+                                                                    <option value="7">تم الانتهاء </option>
+                                                        }
+
+
+                                                    </select>
+                                                </td>
+
+                                              <td>
+                                                    @if (CD.location != null)
+                                                    {
+
+                                                             <input type="text"  value="@CD.location" id="selectedLocation" name="location">
+                                                    }
+                                                    else
+                                                    {
+                                                                <input type="text"  value="" id="selectedLocation" name="location">
+
+                                                    }
+                                                    </td>
+
+                                                <td>
+                                                    <div class="form-group">
+                                                        <label class="control-label">ارفع صوره قبل الخدمة</label>
+                                                      <input type="file" name="ImageStatusFile" accept="image/*" class="form-control" />
+                                                    <span name="ImageStatus" class="text-danger"></span>
+                                                    </div>
+                                                </td>
+                                               
+
+                                                <td>
+                                                    <button data-tip="check" type="submit">
+                                                        <i class="fa-solid fa-circle-check"></i>
+                                                         
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            </form>
+                                    }
+                                </tbody>
+                            </table>
+                            </div>
+                            
+
+
+                </div>
+        </div>
+        
+        </section>
+</main>
+
+@section Scripts
+{
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+     <script>
+        //const form = document.getElementById('myForm');
+        //form.addEventListener('submit', (event) => {
+        //    var statusSelect = document.getElementById("Status");
+        //    if (statusSelect.value == "7") {
+        //        if (!confirm("هل أنت متأكد من انك قمت بالانتهاء سوف يتم حذف الطلب ؟")) {
+        //            return;
+        //        }
+           
+        //    }
+            
+
+        //        const technican = new FormData(form);
+        //        fetch('/Technican/TechnicanUpdatedData', {
+        //            method: 'POST',
+        //            body: technican
+        //        })
+        });
+     </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        const form = document.getElementById('myForm');
+        form.addEventListener('submit', (event) => {
+            var statusSelect = document.getElementById("Status");
+            if (statusSelect.value == "7") {
+                if (!confirm("هل أنت متأكد من انك قمت بالانتهاء سوف يتم حذف الطلب ؟")) {
+                    alert("Heloo");
+                    event.preventDefault();
+                }
+
+            }
+
+
+            //const technican = new FormData(form);
+            //fetch('/Technican/TechnicanUpdatedData', {
+            //    method: 'POST',
+            //    body: technican
+            //})
+        });
+    </script>
+}

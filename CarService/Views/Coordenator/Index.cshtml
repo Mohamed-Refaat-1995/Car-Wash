@@ -1,0 +1,297 @@
+﻿@model List<CoordinatorVM>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_NavAndFooter";
+}
+<main id="main">
+    <!-- ======= Featured Section ======= -->
+    <section id="featured" class="featured">
+        <div class="container" style="margin-top: 5%;">
+            <div class="row" style="width: 100%;">
+                <div class="col-md-offset-1 col-md-10" style="width: 100%;">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col col-sm-3 col-xs-12">
+                                    <h4 class="title">قسم <span>التنسيق</span></h4>
+                                </div>
+                                <div class="col-sm-9 col-xs-12 text-right">
+                                    <div class="btn_group">
+                                        <input type="text" class="form-control" placeholder="Search">
+                                        <button class="btn btn-default" title="Reload"><i class="fa fa-sync-alt"></i></button>
+                                        <button class="btn btn-default" title="Pdf"><i class="fa fa-file-pdf"></i></button>
+                                        <button class="btn btn-default" title="Excel"><i class="fas fa-file-excel"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                    </div>
+                </div>
+                @*<div class="panel-body table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>اسم العميل</th>
+                                <th>تاريخ الخدمه</th>
+                                <th>المدينه</th>
+                                <th>الحى</th>
+                                <th>الخدمه</th>
+                                <th>رقم الهاتف</th>
+                                <th>الحاله</th>
+                                <th>طريقه الدفع</th>
+                                <th>ملاحظات</th>
+
+                                <th>التاريخ المؤكد</th>
+                                <th>الوقت المؤكد</th>
+                                <th>طريقه الدفع المؤكده</th>
+                                <th>تم الدفع</th>
+                                <th>رقم التابى</th>
+                                <th>صوره الفاتوره</th>
+                                <th>اسم الفنى</th>
+                                <th>لتأكيد</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (var CD in Model)
+                            {
+
+                                <form asp-action="CoordinatorUpdatedData" enctype="multipart/form-data">
+                                    <input type="hidden" name="Id" value="@CD.Id">
+                                <tr>
+                                    <td>@CD.Id</td>
+
+                                    <td>@CD.Name</td>
+                                    <td>@CD.ServiceDate.ToShortDateString()</td>
+                                    <td id="cityname">@CD.City</td>
+                                    <input type="hidden" value="@CD.City" name="City">
+                                    <td>@CD.Destrict</td>
+                                    <td>@CD.Service</td>
+                                    <td>@CD.PhoneNumber</td>
+                                    <td>@CD.OrderStatus</td>
+                                    <td>@CD.Price</td>
+                                    <td>@CD.Notes</td>
+                                    <td><input type="date" id="selectedDate" name="AssignDate" onchange="ShowTimes()" /></td>
+
+                                    <td>
+                                        <select id="Times" onchange="GetTechnicans()" name="AssignTime" class="form-select" aria-label="Default select example" disabled>
+
+                                                @foreach (var Time in ViewBag.Times)
+                                                {
+                                                <option value="@Time.Id">@Time.Time</option>
+                                                }
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select name="PaymentMethod" class="form-select" aria-label="Default select example">
+                                            <option> اختر الطريقة</option>
+                                            <option value="تابي">تابي</option>
+                                            <option value="كاش">كاش</option>
+                                            <option value="تحويلة">تحويلة</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select name="IsPayed" class="form-select" aria-label="Default select example">
+                                            <option> اختر الطريقة</option>
+                                            <option value="true">تم الدفع</option>
+                                            <option value="false">لم يتم الدفع</option>
+
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="TabbyID" />
+
+                                    </td>
+                                    <td>
+
+
+                                        <div class="form-group">
+                                            <label class="control-label">ارفع صوره</label>
+                                            <input type="file" name="PaymentImageFile" accept="image/*" class="form-control" />
+                                            <span name="PaymentImageFile" class="text-danger"></span>
+                                        </div>
+                                    </td>
+                                    <td>
+
+                                        <div>
+                                            <label name="TechnicanID" class="control-label"></label>
+                                            <select id="TechID" name="TechnicanID" class="form-control"></select>
+                                            <span name="TechnicanID" class="text-danger"></span>
+                                        </div>
+
+                                    </td>
+                                    <td>
+
+                                        <button data-tip="check"><input type="submit" style="display:none;" /><i class="fa-solid fa-circle-check"></i></button>
+                                    </td>
+                                </tr>
+                                </form>
+                            }
+                        </tbody>
+                    </table>
+                </div>*@
+                <div class="table-wrapper mx-4 table-responsive">
+                    <table class="fl-table ">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>اسم العميل</th>
+                                <th>تاريخ الخدمه</th>
+                                <th>المدينه</th>
+                                <th>الحى</th>
+                                <th>الخدمه</th>
+                                <th>رقم الهاتف</th>
+                                <th>الحاله</th>
+                                <th>طريقه الدفع</th>
+                                <th>ملاحظات</th>
+
+                                <th>التاريخ المؤكد</th>
+                                <th>الوقت المؤكد</th>
+                                <th>طريقه الدفع المؤكده</th>
+                                <th>تم الدفع</th>
+                                <th>رقم التابى</th>
+                                <th>صوره الفاتوره</th>
+                                <th>اسم الفنى</th>
+                                <th>لتأكيد</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var CD in Model)
+                            {
+
+                                <form asp-action="CoordinatorUpdatedData" enctype="multipart/form-data">
+                                    <input type="hidden" name="Id" value="@CD.Id">
+                                <tr>
+                                    <td>@CD.Id</td>
+
+                                    <td>@CD.Name</td>
+                                    <td>@CD.ServiceDate.ToShortDateString()</td>
+                                    <td id="cityname">@CD.City</td>
+                                    <input type="hidden" value="@CD.City" name="City">
+                                    <td>@CD.Destrict</td>
+                                    <td>@CD.Service</td>
+                                    <td>@CD.PhoneNumber</td>
+                                    <td>@CD.OrderStatus</td>
+                                    <td>@CD.Price</td>
+                                    <td>@CD.Notes</td>
+                                    <td><input type="date" id="selectedDate" name="AssignDate" onchange="ShowTimes()" /></td>
+
+                                    <td>
+                                        <select id="Times" onchange="GetTechnicans()" name="AssignTime" class="form-select" aria-label="Default select example" disabled>
+
+                                                @foreach (var Time in ViewBag.Times)
+                                                {
+                                                <option value="@Time.Id">@Time.Time</option>
+                                                }
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select name="PaymentMethod" class="form-select" aria-label="Default select example">
+                                            <option> اختر الطريقة</option>
+                                            <option value="تابي">تابي</option>
+                                            <option value="كاش">كاش</option>
+                                            <option value="تحويلة">تحويلة</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select name="IsPayed" class="form-select" aria-label="Default select example">
+                                            <option> اختر الطريقة</option>
+                                            <option value="true">تم الدفع</option>
+                                            <option value="false">لم يتم الدفع</option>
+
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="TabbyID" />
+
+                                    </td>
+                                    <td>
+
+
+                                        <div class="form-group">
+                                            <label class="control-label">ارفع صوره</label>
+                                            <input type="file" name="PaymentImageFile" accept="image/*" class="form-control" />
+                                            <span name="PaymentImageFile" class="text-danger"></span>
+                                        </div>
+                                    </td>
+                                    <td>
+
+                                        <div>
+                                            <label name="TechnicanID" class="control-label"></label>
+                                            <select id="TechID" name="TechnicanID" class="form-control"></select>
+                                            <span name="TechnicanID" class="text-danger"></span>
+                                        </div>
+
+                                    </td>
+                                    <td>
+
+                                        <button data-tip="check"><input type="submit" style="display:none;" /><i class="fa-solid fa-circle-check"></i></button>
+                                    </td>
+                                </tr>
+                                </form>
+                            }
+                        <tbody>
+                    </table>
+                </div>
+            </div>
+
+
+           
+
+    </section>
+</main>
+
+@section Scripts {
+
+    <script>
+
+
+            function ShowTimes() {
+                var Date = $("#selectedDate").val();
+                var City = $("#cityname").html();
+
+                const timeSelect = document.getElementById('Times');
+                timeSelect.disabled = false;
+
+            }
+
+
+        function GetTechnicans() {
+            var Date = $("#selectedDate").val();
+            var City = $("#cityname").html();
+            $("#TechID").html("");
+
+            var selectElement = document.getElementById("Times");
+            var TimeId = selectElement.options[selectElement.selectedIndex].value;
+            console.log(TimeId);
+            console.log(Date);
+            console.log(City);
+
+
+            $.ajax(
+                {
+                    url: "/Coordenator/GetTechnicans",
+                    data: { "Date": Date, "City": City, "TimeId": TimeId },
+
+                    success: function (result) {
+                        console.log(result);
+                        for (let item of result) {
+                            $("#TechID").append("<option value=" + item.id + ">" + item.user.firstName + ' ' + item.user.lastName + "</option>")
+                        }
+                    }
+                });
+
+        }
+
+
+  
+
+
+
+    </script>
+
+
+}
